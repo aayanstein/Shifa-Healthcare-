@@ -151,13 +151,13 @@ const doctors = [
 ];
 
 export default function Home() {
-  const [patientIdInput, setPatientIdInput] = useState("");
+  const [activeTab, setActiveTab] = useState("bpm");
 
   return (
-    <main className="min-h-screen bg-[#f8fbff] text-[#10233f] selection:bg-blue-600 selection:text-white">
+    <main className="min-h-screen bg-[#f8fbff] text-[#10233f] selection:bg-blue-600 selection:text-white overflow-x-hidden">
       {/* NAVBAR */}
       <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-xl transition-all">
-        <div className="mx-auto flex h-[80px] max-w-[1380px] items-center justify-between px-6 lg:px-10">
+        <div className="mx-auto flex h-[80px] max-w-[1380px] items-center justify-between px-4 sm:px-6 lg:px-10">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-700 to-blue-500 text-white shadow-lg shadow-blue-600/25 transition-transform duration-300 group-hover:scale-105">
               <svg
@@ -189,22 +189,22 @@ export default function Home() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Link
               href="/doctor-portal"
-              className="rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 px-5 py-2.5 text-sm font-bold text-slate-950 shadow-md shadow-amber-500/20 transition-all hover:brightness-110 hover:shadow-lg hover:shadow-amber-500/30"
+              className="hidden sm:inline-flex rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-950 shadow-md shadow-amber-500/20 transition-all hover:brightness-110"
             >
-              Login as a Doctor
+              Doctor Login
             </Link>
             <Link
               href="/login"
-              className="rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-100/80"
+              className="rounded-xl px-3 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 transition hover:bg-slate-100/80"
             >
               Login
             </Link>
             <Link
               href="/register"
-              className="rounded-xl bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/20 transition-all hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/30"
+              className="rounded-xl bg-blue-600 px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md shadow-blue-600/20 transition-all hover:bg-blue-700"
             >
               Register
             </Link>
@@ -216,9 +216,9 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-slate-200/60 bg-gradient-to-br from-[#f8fbff] via-[#edf4ff] to-[#e2efff]">
         {/* Glow Effects */}
         <div className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-blue-400/15 blur-[120px] pointer-events-none" />
-        <div className="absolute right-0 top-1/2 h-[400px] w-[400px] rounded-full bg-amber-400/10 blur-[100px] pointer-events-none" />
+        <div className="absolute right-0 top-1/2 h-[400px] w-[400px] rounded-full bg-blue-600/10 blur-[100px] pointer-events-none" />
 
-        <div className="mx-auto grid min-h-[680px] max-w-[1380px] grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-24">
+        <div className="mx-auto grid min-h-[680px] max-w-[1380px] grid-cols-1 items-center gap-12 px-4 sm:px-6 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-24">
           
           <div className="max-w-[650px] relative z-10">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-blue-700 shadow-sm backdrop-blur-md">
@@ -226,7 +226,7 @@ export default function Home() {
               Smart healthcare, organized around you
             </div>
 
-            <h1 className="text-[44px] font-black leading-[1.05] tracking-tight text-[#10233f] sm:text-[56px] lg:text-[66px]">
+            <h1 className="text-[38px] font-black leading-[1.1] tracking-tight text-[#10233f] sm:text-[56px] lg:text-[66px]">
               AI-Powered Healthcare
               <br />
               <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
@@ -234,7 +234,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-[560px] text-[17px] leading-8 text-slate-600 font-normal">
+            <p className="mt-6 max-w-[560px] text-[16px] sm:text-[17px] leading-8 text-slate-600 font-normal">
               SHIFA is your intelligent healthcare companion for a better and
               healthier life. Keep your healthcare information organized,
               understand your medical history, and make better-informed
@@ -273,7 +273,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm p-3 rounded-2xl border border-slate-200/60 shadow-sm">
-                <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs shrink-0">BD</div>
+                <div className="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs shrink-0">BD</div>
                 <div>
                   <h4 className="text-xs font-bold text-[#10233f]">Dual Language</h4>
                   <p className="text-[11px] text-slate-500">Bangla & English</p>
@@ -282,72 +282,134 @@ export default function Home() {
             </div>
           </div>
 
-          {/* DOCTOR'S CORNER - COOL BOX */}
-          <div className="relative flex flex-col items-center justify-center lg:justify-end z-10">
-            <div className="absolute inset-10 rounded-full bg-gradient-to-tr from-amber-400/20 to-yellow-500/20 blur-3xl pointer-events-none" />
+          {/* REPLACED DOCTOR'S CORNER WITH A BEAUTIFUL HEALTH GRAPH COMPONENT */}
+          <div className="relative flex flex-col items-center justify-center lg:justify-end z-10 w-full">
+            <div className="absolute inset-10 rounded-full bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 blur-3xl pointer-events-none" />
 
-            <div className="relative w-full max-w-[460px] rounded-[32px] bg-gradient-to-br from-[#0a1527] via-[#10233f] to-[#1c355e] p-8 text-white shadow-[0_25px_60px_rgba(10,25,47,0.5)] border border-amber-500/30 overflow-hidden">
-              <div className="absolute -right-12 -top-12 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="relative w-full max-w-[480px] rounded-[32px] bg-gradient-to-br from-[#0a1527] via-[#10233f] to-[#1c355e] p-6 sm:p-8 text-white shadow-[0_25px_60px_rgba(10,25,47,0.5)] border border-blue-500/30 overflow-hidden">
+              <div className="absolute -right-12 -top-12 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
 
-              {/* Header inside Box */}
-              <div className="flex items-center justify-between border-b border-amber-500/20 pb-5">
+              {/* Header inside Graph Box */}
+              <div className="flex items-center justify-between border-b border-blue-500/20 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 text-slate-950 font-black shadow-lg shadow-amber-500/30 text-lg">
-                    🩺
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white font-black shadow-lg shadow-blue-600/30 text-base">
+                    📈
                   </div>
                   <div>
-                    <span className="text-[10px] font-black tracking-widest uppercase text-amber-400 bg-amber-950/80 px-2.5 py-0.5 rounded-md border border-amber-500/30">
-                      SECURE PORTAL
+                    <span className="text-[10px] font-black tracking-widest uppercase text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded-md border border-blue-500/30">
+                      LIVE VITALS
                     </span>
-                    <h3 className="text-xl font-black text-white mt-1">Doctor&apos;s Corner</h3>
+                    <h3 className="text-lg sm:text-xl font-black text-white mt-1">Health Analytics</h3>
                   </div>
                 </div>
-                <div className="h-3 w-3 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
+                <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full text-emerald-400 text-xs font-semibold">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Stable
+                </div>
               </div>
 
-              {/* Tagline & Description */}
-              <div className="mt-6 space-y-3">
-                <p className="text-sm font-extrabold text-amber-200 tracking-wide">
-                  ✨ Instant Clinical Access via Patient ID
-                </p>
-                <p className="text-xs text-slate-300 leading-relaxed font-normal">
-                  Verified medical practitioners can securely log into their clinical dashboard, enter any patient&apos;s unique <span className="font-mono font-bold text-amber-300">SHF-ID</span>, and instantly review live diagnostic reports, prescriptions, and health history.
-                </p>
+              {/* Vitals Switcher Tabs */}
+              <div className="mt-5 grid grid-cols-3 gap-2 bg-slate-900/60 p-1.5 rounded-2xl border border-slate-800">
+                <button
+                  onClick={() => setActiveTab("bpm")}
+                  className={`py-2 rounded-xl text-xs font-bold transition-all ${
+                    activeTab === "bpm"
+                      ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  Heart Rate
+                </button>
+                <button
+                  onClick={() => setActiveTab("bp")}
+                  className={`py-2 rounded-xl text-xs font-bold transition-all ${
+                    activeTab === "bp"
+                      ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  Blood Pressure
+                </button>
+                <button
+                  onClick={() => setActiveTab("sugar")}
+                  className={`py-2 rounded-xl text-xs font-bold transition-all ${
+                    activeTab === "sugar"
+                      ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  Glucose
+                </button>
               </div>
 
-              {/* Interactive Mock Lookup Input */}
-              <div className="mt-6 rounded-2xl bg-white/5 border border-amber-500/20 p-3 backdrop-blur-md">
-                <label className="block text-[10px] font-bold text-amber-300 uppercase tracking-wider mb-2">
-                  Quick Patient ID Lookup Test
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={patientIdInput}
-                    onChange={(e) => setPatientIdInput(e.target.value)}
-                    placeholder="e.g. SHF-BD-204871"
-                    className="w-full rounded-xl bg-slate-900/80 border border-slate-700 px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 font-mono"
-                  />
-                  <Link
-                    href="/doctor-dashboard"
-                    className="rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 px-4 py-2.5 text-xs font-bold text-slate-950 shadow-md transition hover:brightness-110 flex items-center justify-center shrink-0"
-                  >
-                    Access
-                  </Link>
+              {/* Dynamic Graph Representation */}
+              <div className="mt-6 rounded-2xl bg-white/[0.03] border border-blue-500/20 p-5 backdrop-blur-md">
+                <div className="flex items-baseline justify-between">
+                  <div>
+                    <span className="text-xs text-slate-400 font-medium">
+                      {activeTab === "bpm" && "Average Heart Rate"}
+                      {activeTab === "bp" && "Systolic / Diastolic"}
+                      {activeTab === "sugar" && "Blood Glucose Level"}
+                    </span>
+                    <div className="text-2xl sm:text-3xl font-black text-white mt-1">
+                      {activeTab === "bpm" && "72 BPM"}
+                      {activeTab === "bp" && "120/80 mmHg"}
+                      {activeTab === "sugar" && "5.6 mmol/L"}
+                    </div>
+                  </div>
+                  <span className="text-xs font-bold text-emerald-400 bg-emerald-950/50 px-2.5 py-1 rounded-lg border border-emerald-500/30">
+                    Normal Range
+                  </span>
+                </div>
+
+                {/* SVG Visual Graph Line */}
+                <div className="mt-6 h-28 w-full relative flex items-end">
+                  <svg className="w-full h-full overflow-visible" viewBox="0 0 300 100" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="graphGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.0" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M 0,70 Q 50,20 100,50 T 200,30 T 300,40 L 300,100 L 0,100 Z"
+                      fill="url(#graphGradient)"
+                    />
+                    <path
+                      d="M 0,70 Q 50,20 100,50 T 200,30 T 300,40"
+                      fill="none"
+                      stroke="#60a5fa"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  {/* Data Points Markers */}
+                  <div className="absolute top-[40%] left-[33%] h-3 w-3 rounded-full bg-blue-400 border-2 border-white shadow-[0_0_10px_rgba(96,165,250,0.8)] animate-ping" />
+                  <div className="absolute top-[40%] left-[33%] h-3 w-3 rounded-full bg-blue-500 border-2 border-white" />
+                </div>
+
+                <div className="mt-4 flex justify-between text-[11px] text-slate-400 font-mono">
+                  <span>Mon</span>
+                  <span>Tue</span>
+                  <span>Wed</span>
+                  <span>Thu</span>
+                  <span>Fri</span>
+                  <span>Sat</span>
+                  <span>Sun</span>
                 </div>
               </div>
 
               {/* Footer info inside card */}
               <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
-                <span>HIPAA & Privacy Compliant</span>
-                <Link href="/doctor-portal" className="text-amber-400 font-bold hover:underline">
-                  Doctor Login →
+                <span>Updated 5 mins ago</span>
+                <Link href="/dashboard" className="text-blue-400 font-bold hover:underline">
+                  Full Analytics →
                 </Link>
               </div>
             </div>
 
-            <p className="mt-4 text-xs font-medium text-slate-500 tracking-wide bg-white/80 px-4 py-1.5 rounded-full border border-slate-200 shadow-sm backdrop-blur-sm">
-              🔒 Encrypted 256-bit secure connection for medical professionals
+            <p className="mt-4 text-xs font-medium text-slate-500 tracking-wide bg-white/80 px-4 py-1.5 rounded-full border border-slate-200 shadow-sm backdrop-blur-sm text-center">
+              📊 Real-time health synchronization via SHIFA wearable integration
             </p>
           </div>
 
@@ -356,13 +418,13 @@ export default function Home() {
 
       {/* PRODUCT FEATURES */}
       <section id="features" className="bg-[#f8fbff] py-28 text-[#10233f]">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
           <div className="mx-auto mb-16 max-w-[720px] text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-50/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-blue-700 backdrop-blur-sm">
               SHIFA Ecosystem
             </div>
 
-            <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl text-[#10233f]">
+            <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl text-[#10233f]">
               Your healthcare, in one place
             </h2>
 
@@ -377,7 +439,7 @@ export default function Home() {
               <Link
                 key={feature.number}
                 href={feature.href}
-                className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-600/5"
+                className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-600/5"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 text-blue-600 shadow-inner transition group-hover:bg-blue-600 group-hover:text-white">
@@ -409,13 +471,13 @@ export default function Home() {
 
       {/* AI SHIFA */}
       <section id="ai-shifa" className="border-y border-slate-200/60 bg-gradient-to-b from-[#f2f7ff] to-[#edf4ff] py-24">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:px-10">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-10">
           <div>
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
               AI SHIFA
             </p>
 
-            <h2 className="text-4xl font-black leading-tight tracking-tight text-[#10233f] md:text-5xl">
+            <h2 className="text-3xl font-black leading-tight tracking-tight text-[#10233f] md:text-5xl">
               A second opinion,
               <br />
               in plain language
@@ -484,12 +546,12 @@ export default function Home() {
 
       {/* MEDICAL HISTORY TIMELINE */}
       <section id="history" className="bg-white py-24">
-        <div className="mx-auto max-w-[1050px] px-6">
+        <div className="mx-auto max-w-[1050px] px-4 sm:px-6">
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
               One ID. One history.
             </p>
-            <h2 className="text-4xl font-extrabold tracking-tight text-[#10233f] md:text-5xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#10233f] md:text-5xl">
               Your care, in order
             </h2>
             <p className="mx-auto mt-5 max-w-[650px] text-base leading-7 text-slate-600">
@@ -526,12 +588,12 @@ export default function Home() {
 
       {/* DOCTORS */}
       <section className="border-t border-slate-200/60 bg-[#f5f8fd] py-24">
-        <div className="mx-auto max-w-[1180px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-10">
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
               Find Doctors
             </p>
-            <h2 className="text-4xl font-extrabold tracking-tight text-[#10233f] md:text-5xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#10233f] md:text-5xl">
               Care that matches your needs
             </h2>
             <p className="mt-5 text-base text-slate-600">
@@ -604,7 +666,7 @@ export default function Home() {
             <span className="font-bold text-[#10233f]">SHIFA</span>
           </div>
 
-          <div className="flex gap-6 font-medium">
+          <div className="flex flex-wrap gap-6 font-medium">
             <Link href="/privacy" className="hover:text-blue-600 transition">Privacy</Link>
             <Link href="/contact" className="hover:text-blue-600 transition">Contact</Link>
             <Link href="/doctor-portal" className="hover:text-amber-600 transition">Doctor Portal</Link>
