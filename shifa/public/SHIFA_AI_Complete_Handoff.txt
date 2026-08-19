@@ -1,0 +1,888 @@
+# SHIFA.AI — COMPLETE AI HANDOFF / PROJECT MEMORY
+
+## IMPORTANT: READ THIS FIRST
+
+You are taking over an existing project. Do NOT start by redesigning or rebuilding everything.
+
+First:
+1. Understand this document.
+2. Inspect the existing repository/code.
+3. Preserve working functionality.
+4. Make incremental changes.
+5. Before major architectural changes, explain what will change and why.
+
+This document is intended to let Claude, Gemini, ChatGPT, Cursor, or another AI continue the project without the user having to explain the entire history again.
+
+---
+
+# 1. PROJECT IDENTITY
+
+Project name: **SHIFA.AI**
+
+Core tagline:
+
+> **AI-Powered Healthcare At Your Fingertips**
+
+SHIFA is a Bangladesh-focused AI-powered healthcare platform / healthcare companion.
+
+The core idea is to organize a patient's healthcare information into one digital ecosystem so that patients can understand their information more easily and authorized doctors can understand previous medical history more efficiently.
+
+---
+
+# 2. CORE SHIFA IDEA
+
+SHIFA should provide:
+
+- Unique Patient ID
+- Digital Healthcare Card
+- Organized previous medical reports
+- Prescriptions
+- Previous doctor visits
+- Chronological medical history
+- AI-powered explanation/summarization
+- Bangla + English healthcare explanation
+- Doctor suggestions
+- Medical center suggestions
+- Medical store/pharmacy suggestions
+- Expert doctor suggestions
+
+The important product philosophy:
+
+> **One patient identity. One organized healthcare history.**
+
+The platform is intended to make healthcare information easier to manage before, during, and after receiving healthcare.
+
+---
+
+# 3. CORE FEATURES WE HAVE DEFINED
+
+The original feature list includes:
+
+1. Healthcare Card
+2. Previous Medical Report / Medical History
+3. AI Bot — **AI SHIFA**
+4. Add Medical Documents
+5. Previous Doctor
+6. Healthcare Suggestion
+7. Medical Store
+8. Medical Center Suggestions
+9. Expert Doctor Suggestion
+10. Unique Patient ID
+
+These are actual SHIFA product features.
+
+Do NOT remove them simply to make a landing page look cleaner.
+
+---
+
+# 4. AI SHIFA
+
+AI SHIFA is the healthcare AI assistant.
+
+Intended capabilities:
+
+- Explain healthcare information.
+- Explain medical reports in simpler language.
+- Summarize available medical history.
+- Answer healthcare-information questions.
+- Support Bangla and English.
+- Use the user's available records/context when appropriate.
+- Help patients understand information before discussing it with a professional.
+
+Example:
+
+User:
+> Can you explain my blood test report?
+
+AI SHIFA:
+> Explains the report in understandable language.
+
+User:
+> আমার রিপোর্টটা বাংলায় বুঝিয়ে দিতে পারবে?
+
+AI SHIFA:
+> Responds in understandable Bangla.
+
+IMPORTANT:
+AI SHIFA should be presented as a healthcare information/assistance tool, not as a replacement for a licensed doctor or emergency care.
+
+---
+
+# 5. TECHNOLOGY STACK
+
+Current stack:
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Supabase
+
+IMPORTANT:
+
+**Supabase is already connected.**
+
+Do NOT:
+- Replace Supabase.
+- Move to another backend unnecessarily.
+- Redesign the database architecture unnecessarily.
+- Delete working authentication.
+
+The goal is to continue building on what already exists.
+
+---
+
+# 6. DATABASE — EXISTING PATIENTS TABLE
+
+The existing `patients` table contains:
+
+- `Id`
+- `Full_name`
+- `Blood_group`
+- `Phone`
+- `Date_of_Birth`
+- `Patient_id`
+- `email`
+
+IMPORTANT:
+Preserve this existing database structure unless there is a genuine technical requirement to change it.
+
+A previous issue occurred:
+
+> Could not find the 'full_name' column of 'patients' in the schema cache
+
+Do not interpret that error as a reason to redesign the whole database.
+
+---
+
+# 7. SUPABASE / AUTHENTICATION HISTORY
+
+Supabase was connected during development.
+
+Authentication work included:
+
+- Registration
+- Login
+- Email confirmation
+- Patient registration
+
+A previous build error occurred:
+
+> Module not found: Can't resolve '@supabase/ssr'
+
+The project needed `@supabase/ssr`, and that issue was addressed.
+
+A previous Supabase email testing issue occurred:
+
+> email rate limit exceeded
+
+This was an email-testing limitation and is NOT a reason to remove authentication.
+
+At one point:
+
+> This page could not be found.
+
+was encountered while testing a route/registration flow.
+
+Login and registration remain required.
+
+---
+
+# 8. HOW WE GOT TO THE CURRENT UI
+
+The homepage was redesigned several times.
+
+The user supplied reference screenshots and wanted the website to feel visually similar to those references.
+
+IMPORTANT DISTINCTION:
+
+### Reference images define:
+- Style
+- Layout
+- Spacing
+- Composition
+- Typography direction
+- Visual hierarchy
+- Premium feel
+
+### SHIFA defines:
+- Content
+- Features
+- Terminology
+- Product identity
+- Healthcare functionality
+- Brand messaging
+
+Therefore:
+
+> **REFERENCE = visual inspiration**
+>
+> **SHIFA = actual product**
+
+Do NOT copy unrelated content from the references.
+
+Do NOT turn SHIFA into another healthcare website.
+
+---
+
+# 9. FINAL UI/UX DIRECTION
+
+The website should feel:
+
+- Professional
+- Trustworthy
+- Minimal
+- Modern
+- Medical
+- Premium
+- Bangladesh-focused
+- Spacious
+- Polished
+
+It should NOT feel:
+
+- Like a generic SaaS template
+- Like a crypto website
+- Like a generic AI landing page
+- Like a children's healthcare app
+- Cringe
+- Overly cartoonish
+- Overloaded with AI icons
+- Filled with random decorative elements
+- Dull
+
+The user specifically wants the whole interface to feel premium, not just the hero.
+
+Use whitespace intelligently.
+
+Do NOT fill every empty area with cards.
+
+But when content is a real SHIFA feature, presenting it as a polished card/module is preferred.
+
+---
+
+# 10. BRAND IDENTITY
+
+Keep SHIFA's:
+
+- Blue/white identity
+- Professional healthcare aesthetic
+- Existing logo
+- Existing hero visual
+- Clean typography
+- Strong visual hierarchy
+
+Existing assets:
+
+```text
+/public/shifa-logo.png
+/public/shifa-hero.png
+```
+
+The hero visual concept is:
+
+- Phone/app mockup
+- Robot
+- Shield
+
+These are the preferred existing visual assets.
+
+---
+
+# 11. MASCOT HISTORY
+
+We attempted to add a separate mascot image.
+
+The user located a mascot image and tried to place it into the project's `public` folder.
+
+The process became confusing and unnecessarily time-consuming.
+
+The user eventually said to abandon that whole situation.
+
+Therefore:
+
+**Do NOT bring up or spend time on the separate mascot unless the user explicitly asks again.**
+
+The existing logo + hero visual are sufficient.
+
+---
+
+# 12. HOMEPAGE / app/page.tsx
+
+The main homepage file is:
+
+```text
+app/page.tsx
+```
+
+It is a Next.js/React page using Tailwind CSS.
+
+The homepage has been repeatedly redesigned.
+
+The current direction is a premium medical product interface rather than a simple marketing landing page.
+
+When editing `app/page.tsx`:
+
+- Preserve existing working routes.
+- Preserve Login/Register.
+- Preserve SHIFA features.
+- Preserve the tagline.
+- Preserve Supabase-related functionality.
+- Do not replace the entire product unnecessarily.
+
+---
+
+# 13. NAVBAR DECISIONS
+
+The user wanted the navbar simplified.
+
+The following were specifically removed from the main navbar:
+
+- Find Doctors
+- Appointments
+
+The navbar should remain simple.
+
+Authentication must remain accessible:
+
+- Login
+- Registration
+
+Profile/dashboard can remain accessible where appropriate.
+
+Do not make the navbar crowded.
+
+---
+
+# 14. HERO DECISIONS
+
+The hero's core message is:
+
+> **AI-Powered Healthcare**
+>
+> **At Your Fingertips**
+
+Do NOT casually change the tagline.
+
+The user explicitly noticed when the tagline was changed and asked why.
+
+Supporting message concept:
+
+> SHIFA is your intelligent healthcare companion for a better and healthier life.
+
+The hero should focus on SHIFA's core identity.
+
+The following were intentionally removed from the hero:
+
+- Book an Appointment
+- AI Symptom Checker
+
+Do NOT add them back unless the user explicitly asks.
+
+---
+
+# 15. LOGIN + REGISTRATION
+
+Login and Registration are NOT optional marketing elements.
+
+They are part of the actual application.
+
+A previous redesign accidentally caused the user to ask:
+
+> "login and registration feature koi gelo?"
+
+Therefore:
+
+**Never remove Login/Registration just because you are redesigning the homepage.**
+
+---
+
+# 16. SHIFA FEATURE CARDS
+
+The user previously said the SHIFA features looked dull.
+
+The goal is to make them:
+
+- Bigger
+- More attractive
+- Premium
+- Clearly readable
+- Visually distinctive
+- Useful
+- Consistent
+
+Feature cards should feel like real product modules.
+
+Important feature cards:
+
+### Healthcare Card
+Digital patient identity / healthcare card.
+
+### Unique Patient ID
+One persistent patient identity for the SHIFA ecosystem.
+
+### Medical History
+Chronological record of healthcare activity.
+
+### Medical Documents
+Upload/manage reports and documents.
+
+### AI SHIFA
+AI-powered healthcare information assistant.
+
+### Previous Doctors
+Record and access previous doctor information.
+
+### Healthcare Suggestions
+Relevant healthcare guidance/suggestions.
+
+### Medical Stores
+Medical store/pharmacy discovery.
+
+### Medical Centers
+Hospital/clinic/medical center suggestions.
+
+### Expert Doctors
+Relevant specialist/expert doctor suggestions.
+
+Avoid making every card look like the exact same boring rectangle.
+
+Use premium hierarchy and meaningful layouts while maintaining consistency.
+
+---
+
+# 17. MEDICAL HISTORY CONCEPT
+
+A medical timeline has been discussed.
+
+Possible items:
+
+- Blood Test — CBC Panel
+- Consultation — Doctor
+- General Consultation
+
+The timeline should represent:
+
+- Reports
+- Doctor visits
+- Prescriptions
+- Medical events
+
+The purpose is to make the patient's history easy to understand.
+
+---
+
+# 18. DOCTOR DISCOVERY
+
+Find Doctors is a SHIFA feature but does not need to be in the main navbar.
+
+Possible doctor card information:
+
+- Doctor name
+- Specialty
+- Experience
+- Location
+- Availability
+- View profile/action
+
+The product should eventually support relevant doctor/expert suggestions.
+
+---
+
+# 19. MEDICAL CENTER + STORE DISCOVERY
+
+SHIFA may provide:
+
+- Medical center/hospital/clinic suggestions
+- Medical store/pharmacy suggestions
+
+These should eventually be Bangladesh-focused and useful to patients.
+
+---
+
+# 20. FOOTER
+
+Keep the footer simple and professional.
+
+Potential links:
+
+- Privacy
+- Contact
+- Login
+
+Do not overload the footer.
+
+---
+
+# 21. WHAT WE ACTUALLY DID — DEVELOPMENT HISTORY
+
+This is the chronological project history.
+
+## Phase 1 — Idea
+
+We started by defining SHIFA as a healthcare AI platform.
+
+We discussed:
+- Whether the concept would work in Bangladesh.
+- Whether it could be built free/low-cost for a prototype.
+- What the first version should contain.
+
+The initial feature list became the foundation of the product.
+
+## Phase 2 — Product Description
+
+The SHIFA description was refined around:
+
+- Unique Patient ID
+- Digital Healthcare Card
+- Medical reports
+- Prescriptions
+- Previous doctors
+- Chronological AI-powered medical history
+- AI explanation/summarization
+- Bangla + English
+
+The important differentiator was helping authorized doctors understand a patient's previous records more efficiently.
+
+## Phase 3 — Technology
+
+We selected:
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Supabase
+
+The project was created and development started.
+
+## Phase 4 — Supabase
+
+Supabase was connected.
+
+We worked with the `patients` table.
+
+The project was kept on Supabase rather than switching backends.
+
+## Phase 5 — Authentication
+
+We worked on:
+- Registration
+- Login
+- Email confirmation
+- Patient data
+
+Issues encountered:
+- `@supabase/ssr` missing
+- Email rate limit exceeded
+- Registration route/page issue
+- Patient `full_name` schema-cache issue
+
+These were development/debugging problems, not reasons to abandon the architecture.
+
+## Phase 6 — Homepage
+
+We created the homepage.
+
+A first version had:
+- Navbar
+- SHIFA logo
+- Hero
+- Main tagline
+- Hero image
+- CTA buttons
+
+The user then provided visual references and asked for the design to look much more premium.
+
+## Phase 7 — Visual redesign
+
+We iterated through several designs.
+
+Some versions were rejected because:
+- Too generic
+- Too dull
+- Too much AI-style decoration
+- Too childish
+- Too far from the reference
+- Too many unnecessary elements
+
+The design direction was refined into:
+
+**premium + medical + minimal + blue/white + spacious + reference-inspired**
+
+## Phase 8 — Navbar cleanup
+
+We removed:
+- Find Doctors
+- Appointments
+
+from the navbar.
+
+The goal was a cleaner top navigation.
+
+## Phase 9 — Hero cleanup
+
+We removed:
+- Book an Appointment
+- AI Symptom Checker
+
+from the hero.
+
+The user wanted the hero to focus on SHIFA itself.
+
+## Phase 10 — Tagline preservation
+
+The tagline was accidentally changed during iterations.
+
+The user explicitly objected.
+
+Therefore the tagline must remain:
+
+> AI-Powered Healthcare At Your Fingertips
+
+unless the user specifically asks to change it.
+
+## Phase 11 — Feature improvements
+
+The user said SHIFA features looked dull.
+
+We moved toward:
+- Larger feature presentation
+- Better cards
+- More premium spacing
+- Better typography
+- Stronger hierarchy
+
+The product features themselves must remain visible.
+
+## Phase 12 — Login/Register restoration
+
+A redesign caused Login/Registration to disappear from the visible experience.
+
+The user explicitly asked where they went.
+
+Therefore Login/Registration became a permanent "do not remove" requirement.
+
+## Phase 13 — Logo / Mascot attempt
+
+We kept the existing logo and hero.
+
+We attempted to add a separate mascot.
+
+The user struggled with placing it into `public`.
+
+After multiple steps, the user decided:
+
+> "bal ei kahini bad dao"
+
+Meaning: abandon the mascot setup.
+
+So mascot work is paused.
+
+## Phase 14 — Current direction
+
+We stopped unnecessary asset/setup work.
+
+The current goal is to:
+
+**BUILD SHIFA.**
+
+Not endlessly redesign the landing page.
+
+The product should now move toward actual application functionality:
+- Dashboard
+- Healthcare Card
+- Patient ID
+- Medical History
+- Medical Documents
+- AI SHIFA
+- Doctor discovery
+- Medical centers
+- Medical stores
+- Supabase data integration
+
+---
+
+# 22. IMPORTANT USER FEEDBACK TO REMEMBER
+
+The user has repeatedly communicated these preferences:
+
+> "sobgula dekhte and feelwise premium hote hbe"
+
+Everything should look and feel premium.
+
+> "book an appiontment and Ai symptom checker eigul ki bad dao"
+
+Do not put those hero buttons back.
+
+> "login and registration feature koi gelo?"
+
+Login and registration must remain.
+
+> "amader tagline change keno?"
+
+Do not change the core tagline casually.
+
+> "sobkisu card hisebei thakbe altu faltu jinis sorao"
+
+Useful content should be presented as clean cards/modules and unnecessary elements should be removed.
+
+> "my website should look like this"
+
+Reference images are important for the visual direction.
+
+> "reference → style, SHIFA → content"
+
+Do not replace SHIFA's identity with the reference site's identity.
+
+---
+
+# 23. WHAT NOT TO DO
+
+Do NOT:
+
+- Replace Supabase.
+- Replace the database architecture unnecessarily.
+- Remove authentication.
+- Remove Login.
+- Remove Registration.
+- Change the tagline without permission.
+- Remove SHIFA's core features.
+- Add Book an Appointment back to the hero without permission.
+- Add AI Symptom Checker back to the hero without permission.
+- Add Find Doctors back to the navbar without permission.
+- Add Appointments back to the navbar without permission.
+- Turn the site into generic SaaS.
+- Turn it into a crypto-like design.
+- Turn it into a children's healthcare app.
+- Add random AI icons everywhere.
+- Add unnecessary mascot illustrations.
+- Fill whitespace with meaningless cards.
+- Make every section a huge gradient.
+- Make everything look like a template.
+- Rewrite working code unnecessarily.
+- Change database fields casually.
+- Make major architectural changes without explanation.
+
+---
+
+# 24. USER'S WORKING STYLE
+
+The user prefers:
+
+- Short explanations.
+- Simple Banglish/Bengali when appropriate.
+- Practical instructions.
+- One step at a time for setup/file operations.
+- Complete code when asking for code.
+- Direct solutions.
+- Less theory.
+- Visual/premium results.
+
+When helping with VS Code or files, do not give 10 complicated steps at once.
+
+When giving code, clearly say:
+- Which file
+- What to replace
+- What the result should be
+
+---
+
+# 25. CURRENT PROJECT STATE
+
+At handoff time:
+
+- Next.js project exists.
+- React/TypeScript/Tailwind are in use.
+- Supabase is connected.
+- Authentication has been developed/tested.
+- `patients` table exists.
+- Homepage is being refined.
+- SHIFA visual identity is established.
+- Logo and hero assets are established.
+- Separate mascot work is paused.
+- The core feature set is defined.
+- The main tagline is fixed.
+- Navbar was simplified.
+- Hero CTAs were simplified.
+- The interface direction is premium medical rather than generic SaaS.
+
+The next major stage is actual product development.
+
+---
+
+# 26. NEXT DEVELOPMENT PRIORITIES
+
+Recommended order:
+
+1. Stabilize Login/Registration.
+2. Verify Supabase patient registration/data flow.
+3. Build the main patient dashboard.
+4. Build Healthcare Card.
+5. Display Unique Patient ID.
+6. Build Medical History.
+7. Build Medical Documents upload/list.
+8. Build AI SHIFA interface.
+9. Connect AI SHIFA to appropriate data/backend when ready.
+10. Build Previous Doctors.
+11. Build Doctor/Expert suggestions.
+12. Build Medical Center suggestions.
+13. Build Medical Store suggestions.
+14. Polish responsive/mobile UI.
+15. Add privacy/contact and other production basics.
+
+Do not attempt everything at once.
+
+---
+
+# 27. CURRENT DESIGN PRINCIPLE
+
+The most important design principle is:
+
+> **MAKE SHIFA LOOK PREMIUM, NOT DIFFERENT.**
+
+We are polishing SHIFA.
+
+We are not replacing SHIFA.
+
+Reference images should guide:
+- layout
+- spacing
+- typography
+- visual hierarchy
+- composition
+
+SHIFA should determine:
+- content
+- features
+- terminology
+- product behavior
+- brand
+
+---
+
+# 28. SHORT VERSION FOR A LIMITED-CONTEXT AI
+
+If you cannot process the entire document, use this:
+
+> SHIFA.AI is a Bangladesh-focused AI healthcare platform built with Next.js, React, TypeScript, Tailwind CSS and Supabase. It provides Unique Patient ID, Healthcare Card, organized medical reports/history, previous doctor information, Medical Documents, AI SHIFA, and suggestions for doctors, medical centers and medical stores. Supabase is already connected and must NOT be replaced. Existing `patients` fields are Id, Full_name, Blood_group, Phone, Date_of_Birth, Patient_id, email. Authentication (Login/Register) is required and must remain. The main tagline is "AI-Powered Healthcare At Your Fingertips" and should not be changed casually. The UI should be premium, minimal, modern, medical, blue/white, spacious and inspired by provided reference screenshots, but SHIFA's own content/features must remain. Find Doctors and Appointments were removed from the navbar; Book an Appointment and AI Symptom Checker were removed from the hero. Existing assets include `/public/shifa-logo.png` and `/public/shifa-hero.png`. A separate mascot attempt was abandoned. The project has already gone through Supabase/auth debugging and several homepage redesign iterations. The current goal is to stop unnecessary redesign and build the real SHIFA product: dashboard, Healthcare Card, Patient ID, Medical History, Documents, AI SHIFA, doctor/center/store discovery, while preserving existing functionality.
+
+---
+
+# 29. HANDOFF RULE
+
+If another AI continues this project:
+
+1. Read this file.
+2. Inspect the current repo.
+3. Do not assume old code is still exactly the same.
+4. Preserve working features.
+5. Explain major changes before making them.
+6. Make incremental changes.
+7. Keep the SHIFA product idea intact.
+8. Do not make the user repeat the history in this document.
+
+Priority:
+
+**FUNCTIONALITY + PREMIUM UI + SHIFA IDENTITY + STABILITY**
+
