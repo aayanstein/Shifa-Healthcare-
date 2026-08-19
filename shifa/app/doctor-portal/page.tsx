@@ -7,14 +7,19 @@ export default function DoctorPortalLogin() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // এখানে সিম্পল ভ্যালিডেশন
+    setIsLoading(true);
+
+    // সিম্পল লগইন লজিক
     if (email === "iamarafathabib@gmail.com" && password === "password123") {
+      // সফল হলে ড্যাশবোর্ডে রিডাইরেক্ট করবে
       router.push("/doctor-dashboard");
     } else {
-      alert("Invalid Credentials! Use: iamarafathabib@gmail.com / password123");
+      alert("Invalid Credentials! Please try again.");
+      setIsLoading(false);
     }
   };
 
@@ -32,7 +37,7 @@ export default function DoctorPortalLogin() {
           <span className="font-black text-xl tracking-tight text-slate-900">SHIFA <span className="text-amber-600 font-medium text-xs block -mt-1">DOCTOR PORTAL</span></span>
         </div>
         <button 
-          onClick={() => window.location.href = '/'}
+          onClick={() => router.push('/')}
           className="text-xs font-bold text-slate-500 hover:text-amber-600 transition flex items-center gap-1.5 border border-slate-200 px-4 py-2 rounded-xl bg-white shadow-sm hover:border-amber-200"
         >
           ← Back to Home
@@ -60,7 +65,8 @@ export default function DoctorPortalLogin() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 text-sm font-medium text-slate-900 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition"
-              placeholder="name@shifa.com"
+              placeholder="iamarafathabib@gmail.com"
+              required
             />
           </div>
           <div>
@@ -71,6 +77,7 @@ export default function DoctorPortalLogin() {
               onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 text-sm font-medium text-slate-900 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition"
               placeholder="••••••••••••"
+              required
             />
           </div>
 
@@ -83,17 +90,15 @@ export default function DoctorPortalLogin() {
 
           <button 
             type="submit"
-            className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-black py-4 rounded-2xl shadow-xl shadow-amber-500/20 transition-all hover:scale-[1.01] active:scale-[0.99]"
+            disabled={isLoading}
+            className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white font-black py-4 rounded-2xl shadow-xl shadow-amber-500/20 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70"
           >
-            Sign In to Clinical Dashboard
+            {isLoading ? "Signing in..." : "Sign In to Clinical Dashboard"}
           </button>
         </form>
 
         <div className="mt-8 pt-6 border-t border-slate-100 text-center">
           <p className="text-[10px] text-slate-400 flex items-center justify-center gap-1.5 font-medium">
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
             Protected by 256-bit HIPAA compliant encryption.
           </p>
         </div>
