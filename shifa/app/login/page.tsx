@@ -37,10 +37,10 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen bg-slate-50 flex items-center justify-center px-6 py-12 relative">
-      {/* Back to Dashboard Link */}
+      {/* Back to Home Link */}
       <div className="absolute top-6 left-6">
         <Link
-          href="/dashboard"
+          href="/"
           className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-600 bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-200 transition"
         >
           <svg
@@ -57,7 +57,7 @@ export default function LoginPage() {
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          Back to Dashboard
+          Back to Home
         </Link>
       </div>
 
