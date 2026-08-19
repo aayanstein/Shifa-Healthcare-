@@ -36,14 +36,58 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 flex items-center justify-center px-6 py-12">
+    <main className="min-h-screen bg-slate-50 flex items-center justify-center px-6 py-12 relative">
+      {/* Back to Dashboard Link */}
+      <div className="absolute top-6 left-6">
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-600 bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-200 transition"
+        >
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          Back to Dashboard
+        </Link>
+      </div>
+
       <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+        {/* Patient Login SVG Icon */}
+        <div className="flex justify-center mb-4">
+          <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.8"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+          </div>
+        </div>
+
         <h1 className="text-3xl font-bold text-blue-700 text-center tracking-tight">
           SHIFA
         </h1>
 
         <p className="text-center text-slate-500 mt-2 text-sm">
-          Welcome back to your healthcare account
+          Patient Portal Login
         </p>
 
         <form onSubmit={handleLogin} className="mt-6 space-y-4">
