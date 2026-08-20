@@ -12,14 +12,14 @@ const samplePrompts = {
     "উচ্চ রক্তচাপ (High Blood Pressure) নিয়ন্ত্রণের উপায় কী?",
     "ডায়াবেটিস রোগীদের প্রতিদিনের ডায়েট কেমন হওয়া উচিত?",
     "মাথাব্যথা ও মাইগ্রেনের সমস্যা থেকে মুক্তির সহজ উপায় কি?",
-    "শরীরে অতিরিক্ত ক্লান্তি এবং ভিটামিন ডি এর ঘাটতি কেন হয়?",
-    "ত্বকের এলার্জি বা র‍্যাশ দূর করার ঘরোয়া উপায় কী?",
-    "হজম শক্তি বাড়াতে ও কোষ্ঠকাঠিন্য দূর করতে কী করা উচিত?",
-    "বুকের জ্বালাপোড়া ও এসিডিটি দূর করার সঠিক নিয়ম কী?",
-    "নিয়মিত ঘুমের সমস্যা বা ইনসোমনিয়া দূর করার উপায় কি?",
-    "কোলেস্টেরল লেভেল নিয়ন্ত্রণে রাখার কার্যকরী খাবারগুলো কী?",
-    "ওজন কমাতে ডায়েট চার্ট বা সঠিক নিয়ম কি হওয়া উচিত?",
-    "ঠান্ডা, সর্দি ও গলা ব্যথা থেকে দ্রুত মুক্তির উপায় কি?",
+    "শরীরে অতিরিক্ত ক্লান্তি এবং ভিটামিন ডি এর ঘাটতি কেন হয়?",
+    "ত্বকের এলার্জি বা র‍্যাশ দূর করার ঘরোয়া উপায় কী?",
+    "হজম শক্তি বাড়াতে ও কোষ্ঠকাঠিন্য দূর করতে কী করা উচিত?",
+    "বুকের জ্বালাপোড়া ও এসিডিটি দূর করার সঠিক নিয়ম কী?",
+    "নিয়মিত ঘুমের সমস্যা বা ইনসোমনিয়া দূর করার উপায় কি?",
+    "কোলেস্টেরল লেভেল নিয়ন্ত্রণে রাখার কার্যকরী খাবারগুলো কী?",
+    "ওজন কমাতে ডায়েট চার্ট বা সঠিক নিয়ম কি হওয়া উচিত?",
+    "ঠান্ডা, সর্দি ও গলা ব্যথা থেকে দ্রুত মুক্তির উপায় কি?",
   ],
   en: [
     "What does a high TSH level in my blood test mean?",
@@ -42,21 +42,21 @@ const samplePrompts = {
 
 const prebuiltAnswers = {
   bn: {
-    "আমার Blood Test রিপোর্টের TSH লেভেল বেশি আসার মানে কি?": "রক্ত পরীক্ষায় TSH (Thyroid Stimulating Hormone) এর মাত্রা বেশি আসার অর্থ সাধারণত হাইপোথাইরয়েডিজম (Hypothyroidism)। এতে থাইরয়েড গ্রন্থি পর্যাপ্ত হরমোন তৈরি করছে না। বিস্তারিত মূল্যায়নের জন্য একজন এন্ডোক্রিনোলজিস্টের পরামর্শ নেওয়া উচিত।",
-    "আমার CBC Blood Panel এর মূল বিষয়গুলো বুঝিয়ে দাও": "CBC বা কমপ্লিট ব্লাড কাউন্টে সাধারণত হিমোগ্লোবিন, ডব্লিউবিসি (WBC) এবং প্লেটলেট পরীক্ষা করা হয়। হিমোগ্লোবিনের মাত্রা কম থাকলে রক্তস্বল্পতা (Anemia) এবং ডব্লিউবিসি বেশি থাকলে ইনফেকশন নির্দেশ করতে পারে।",
-    "আমার পেটে সামান্য ব্যথা আর এসিডিটি হলে কি ঘরোয়া ব্যবস্থা নেব?": "সামান্য পেট ব্যথা ও এসিডিটিতে হালকা গরম পানি পান করতে পারেন, অতিরিক্ত তেল-মসলাযুক্ত খাবার এড়িয়ে চলুন এবং আদা চা বা পুদিনা পাতার রস খেতে পারেন। সমস্যা না কমলে চিকিৎসকের শরণাপন্ন হোন।",
-    "আমার সর্বশেষ প্রেসক্রিপশনের সারসংক্ষেপ বল": "আপনার সর্বশেষ প্রেসক্রিপশন অনুযায়ী চিকিৎসাপত্রটি পরীক্ষা করা হচ্ছে। এখানে নির্দেশিত ওষুধগুলো নিয়মিত সেবন করুন এবং নির্দিষ্ট সময় পর ফলোআপ করুন।",
-    "উচ্চ রক্তচাপ (High Blood Pressure) নিয়ন্ত্রণের উপায় কী?": "উচ্চ রক্তচাপ নিয়ন্ত্রণে খাবারে লবণের পরিমাণ কমাতে হবে, নিয়মিত ৩০ মিনিট হাঁটাহাঁটি বা ব্যায়াম করতে হবে, মানসিক চাপ মুক্ত থাকতে হবে এবং চিকিৎসকের পরামর্শ অনুযায়ী ওষুধ সেবন করতে হবে।",
-    "ডায়াবেটিস রোগীদের প্রতিদিনের ডায়েট কেমন হওয়া উচিত?": "ডায়াবেটিস রোগীদের মিষ্টি ও চিনিযুক্ত খাবার সম্পূর্ণ বর্জন করা উচিত। পরিবর্তে ফাইবারসমৃদ্ধ খাবার, শাকসবজি, লাল চালের ভাত এবং পরিমিত পরিমাণে প্রোটিন গ্রহণ করা উচিত।",
-    "মাথাব্যথা ও মাইগ্রেনের সমস্যা থেকে মুক্তির সহজ উপায় কি?": "মাথাব্যথা শুরু হলে অন্ধকার ও শান্ত রুমে বিশ্রাম নিতে পারেন। কপালে ঠাণ্ডা প্যাক ব্যবহার করতে পারেন এবং পর্যাপ্ত পানি পান করা জরুরি। অতিরিক্ত ক্যাফেইন বা স্ক্রিনটাইম এড়িয়ে চলুন।",
-    "শরীরে অতিরিক্ত ক্লান্তি এবং ভিটামিন ডি এর ঘাটতি কেন হয়?": "পর্যাপ্ত রোদ বা সূর্যের আলো না পাওয়া, পুষ্টিকর খাবারের অভাব এবং ঘুমের অনিয়মের কারণে ভিটামিন ডি এর ঘাটতি ও ক্লান্তি দেখা দিতে পারে। প্রয়োজনে রক্ত পরীক্ষা করে সাপ্লিমেন্ট নেওয়া যেতে পারে।",
-    "ত্বকের এলার্জি বা র‍্যাশ দূর করার ঘরোয়া উপায় কী?": "এলার্জি আক্রান্ত স্থানে অ্যালোভেরা জেল বা ঠান্ডা বরফ ব্যবহার করতে পারেন। সুতির ঢিলেঢালা পোশাক পরুন এবং সুগন্ধযুক্ত প্রসাধন থেকে দূরে থাকুন।",
-    "হজম শক্তি বাড়াতে ও কোষ্ঠকাঠিন্য দূর করতে কী করা উচিত?": "প্রতিদিন পর্যাপ্ত পরিমাণে পানি পান করুন, সালাদ ও ফাইবারযুক্ত খাবার বেশি খান এবং নিয়মিত হালকা ব্যায়াম বা হাঁটাহাঁটি করুন।",
-    "বুকের জ্বালাপোড়া ও এসিডিটি দূর করার সঠিক নিয়ম কী?": "একসাথে অনেক খাবার না খেয়ে অল্প অল্প করে বারবার খান। শোয়ার অন্তত দুই ঘণ্টা আগে রাতের খাবার শেষ করুন এবং অতিরিক্ত চর্বিযুক্ত খাবার এড়িয়ে চলুন।",
-    "নিয়মিত ঘুমের সমস্যা বা ইনসোমনিয়া দূর করার উপায় কি?": "ঘুমানোর অন্তত ১ ঘণ্টা আগে মোবাইল বা ল্যাপটপ স্ক্রিন বন্ধ রাখুন। শোবার ঘর অন্ধকার ও শান্ত রাখুন এবং একটি নির্দিষ্ট সময়ে ঘুমাতে যাওয়ার অভ্যাস করুন।",
-    "কোলেস্টেরল লেভেল নিয়ন্ত্রণে রাখার কার্যকরী খাবারগুলো কী?": "ওটস, বাদাম, জলপাই তেল, ওমেগা-৩ সমৃদ্ধ মাছ এবং তাজা শাকসবজি খারাপ কোলেস্টেরল (LDL) কমাতে দারুণ কার্যকরী।",
-    "ওজন কমাতে ডায়েটচার্ট বা সঠিক নিয়ম কি হওয়া উচিত?": "ফাস্টফুড ও মিষ্টিজাতীয় খাবার বাদ দিয়ে প্রোটিন ও ফাইবার সমৃদ্ধ খাবার খান। ক্যালোরি ডেফিসিট মেইনটেইন করুন এবং প্রতিদিন অন্তত ৩০ মিনিট শারীরিক পরিশ্রম করুন।",
-    "ঠান্ডা, সর্দি ও গলা ব্যথা থেকে দ্রুত মুক্তির উপায় কি?": "লবণ পানিতে কুলকুচি করুন, কুসুম গরম পানি ও আদা-লেবুর চা পান করুন এবং বাষ্প (Steam inhalation) নিতে পারেন।"
+    "আমার Blood Test রিপোর্টের TSH লেভেল বেশি আসার মানে কি?": "রক্ত পরীক্ষায় TSH (Thyroid Stimulating Hormone) এর মাত্রা বেশি আসার অর্থ সাধারণত হাইপোথাইরয়েডিজম (Hypothyroidism)। এতে থাইরয়েড গ্রন্থি পর্যাপ্ত হরমোন তৈরি করছে না। বিস্তারিত মূল্যায়নের জন্য একজন এন্ডোক্রিনোলজিস্টের পরামর্শ নেওয়া উচিত।",
+    "আমার CBC Blood Panel এর মূল বিষয়গুলো বুঝিয়ে দাও": "CBC বা কমপ্লিট ব্লাড কাউন্টে সাধারণত হিমোগ্লোবিন, ডব্লিউবিসি (WBC) এবং প্লেটলেট পরীক্ষা করা হয়। হিমোগ্লোবিনের মাত্রা কম থাকলে রক্তস্বল্পতা (Anemia) এবং ডব্লিউবিসি বেশি থাকলে ইনফেকশন নির্দেশ করতে পারে।",
+    "আমার পেটে সামান্য ব্যথা আর এসিডিটি হলে কি ঘরোয়া ব্যবস্থা নেব?": "সামান্য পেট ব্যথা ও এসিডিটিতে হালকা গরম পানি পান করতে পারেন, অতিরিক্ত তেল-মসলাযুক্ত খাবার এড়িয়ে চলুন এবং আদা চা বা পুদিনা পাতার রস খেতে পারেন। সমস্যা না কমলে চিকিৎসকের শরণাপন্ন হোন।",
+    "আমার সর্বশেষ প্রেসক্রিপশনের সারসংক্ষেপ বল": "আপনার সর্বশেষ প্রেসক্রিপশন অনুযায়ী চিকিৎসাপত্রটি পরীক্ষা করা হচ্ছে। এখানে নির্দেশিত ওষুধগুলো নিয়মিত সেবন করুন এবং নির্দিষ্ট সময় পর ফলোআপ করুন।",
+    "উচ্চ রক্তচাপ (High Blood Pressure) নিয়ন্ত্রণের উপায় কী?": "উচ্চ রক্তচাপ নিয়ন্ত্রণে খাবারে লবণের পরিমাণ কমাতে হবে, নিয়মিত ৩০ মিনিট হাঁটাহাঁটি বা ব্যায়াম করতে হবে, মানসিক চাপ মুক্ত থাকতে হবে এবং চিকিৎসকের পরামর্শ অনুযায়ী ওষুধ সেবন করতে হবে।",
+    "ডায়াবেটিস রোগীদের প্রতিদিনের ডায়েট কেমন হওয়া উচিত?": "ডায়াবেটিস রোগীদের মিষ্টি ও চিনিযুক্ত খাবার সম্পূর্ণ বর্জন করা উচিত। পরিবর্তে ফাইবারসমৃদ্ধ খাবার, শাকসবজি, লাল চালের ভাত এবং পরিমিত পরিমাণে প্রোটিন গ্রহণ করা উচিত।",
+    "মাথাব্যথা ও মাইগ্রেনের সমস্যা থেকে মুক্তির সহজ উপায় কি?": "মাথাব্যথা শুরু হলে অন্ধকার ও শান্ত রুমে বিশ্রাম নিতে পারেন। কপালে ঠাণ্ডা প্যাক ব্যবহার করতে পারেন এবং পর্যাপ্ত পানি পান করা জরুরি। অতিরিক্ত ক্যাফেইন বা স্ক্রিনটাইম এড়িয়ে চলুন।",
+    "শরীরে অতিরিক্ত ক্লান্তি এবং ভিটামিন ডি এর ঘাটতি কেন হয়?": "পর্যাপ্ত রোদ বা সূর্যের আলো না পাওয়া, পুষ্টিকর খাবারের অভাব এবং ঘুমের অনিয়মের কারণে ভিটামিন ডি এর ঘাটতি ও ক্লান্তি দেখা দিতে পারে। প্রয়োজনে রক্ত পরীক্ষা করে সাপ্লিমেন্ট নেওয়া যেতে পারে।",
+    "ত্বকের এলার্জি বা র‍্যাশ দূর করার ঘরোয়া উপায় কী?": "এলার্জি আক্রান্ত স্থানে অ্যালোভেরা জেল বা ঠান্ডা বরফ ব্যবহার করতে পারেন। সুতির ঢিলেঢালা পোশাক পরুন এবং সুগন্ধযুক্ত প্রসাধন থেকে দূরে থাকুন।",
+    "হজম শক্তি বাড়াতে ও কোষ্ঠকাঠিন্য দূর করতে কী করা উচিত?": "প্রতিদিন পর্যাপ্ত পরিমাণে পানি পান করুন, সালাদ ও ফাইবারযুক্ত খাবার বেশি খান এবং নিয়মিত হালকা ব্যায়াম বা হাঁটাহাঁটি করুন।",
+    "বুকের জ্বালাপোড়া ও এসিডিটি দূর করার সঠিক নিয়ম কী?": "একসাথে অনেক খাবার না খেয়ে অল্প অল্প করে বারবার খান। শোয়ার অন্তত দুই ঘণ্টা আগে রাতের খাবার শেষ করুন এবং অতিরিক্ত চর্বিযুক্ত খাবার এড়িয়ে চলুন।",
+    "নিয়মিত ঘুমের সমস্যা বা ইনসোমনিয়া দূর করার উপায় কি?": "ঘুমানোর অন্তত ১ ঘণ্টা আগে মোবাইল বা ল্যাপটপ স্ক্রিন বন্ধ রাখুন। শোবার ঘর অন্ধকার ও শান্ত রাখুন এবং একটি নির্দিষ্ট সময়ে ঘুমাতে যাওয়ার অভ্যাস করুন।",
+    "কোলেস্টেরল লেভেল নিয়ন্ত্রণে রাখার কার্যকরী খাবারগুলো কী?": "ওটস, বাদাম, জলপাই তেল, ওমেগা-৩ সমৃদ্ধ মাছ এবং তাজা শাকসবজি খারাপ কোলেস্টেরল (LDL) কমাতে দারুণ কার্যকরী।",
+    "ওজন কমাতে ডায়েটচার্ট বা সঠিক নিয়ম কি হওয়া উচিত?": "ফাস্টফুড ও মিষ্টিজাতীয় খাবার বাদ দিয়ে প্রোটিন ও ফাইবার সমৃদ্ধ খাবার খান। ক্যালোরি ডেফিসিট মেইনটেইন করুন এবং প্রতিদিন অন্তত ৩০ মিনিট শারীরিক পরিশ্রম করুন।",
+    "ঠান্ডা, সর্দি ও গলা ব্যথা থেকে দ্রুত মুক্তির উপায় কি?": "লবণ পানিতে কুলকুচি করুন, কুসুম গরম পানি ও আদা-লেবুর চা পান করুন এবং বাষ্প (Steam inhalation) নিতে পারেন."
   },
   en: {
     "What does a high TSH level in my blood test mean?": "A high TSH (Thyroid Stimulating Hormone) level usually indicates hypothyroidism, meaning your thyroid gland is underactive and not producing enough hormones. Consult an endocrinologist for further evaluation.",
@@ -102,26 +102,25 @@ const localizedTexts = {
     headerTitle: "AI SHIFA Health Companion",
     headerSub: "Bangla & English Medical Intelligence",
     active: "Active",
-    placeholder: "Ask AI SHIFA in English...",
+    placeholder: "Ask AI SHIFA...",
     suggestionsLabel: "Suggestions & Common Queries:",
     welcomeMsg: "Hello! I am AI SHIFA, your personal health companion. I can help explain your medical reports and health queries in simple terms. Choose from the suggestions below or ask directly.",
   },
 };
 
 export default function AiShifaChat() {
-  const [selectedLang, setSelectedLang] = useState(null); // 'bn' | 'en' | null
+  const [selectedLang, setSelectedLang] = useState(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   
-  // ডাইনামিক রিপোর্ট লিস্টের স্টেট
   const [activeReports, setActiveReports] = useState([
     { id: 1, title: "CBC Blood Panel", date: "12 Feb 2026", selected: true },
     { id: 2, title: "Thyroid Profile (TSH)", date: "05 Jan 2026", selected: false },
     { id: 3, title: "Prescription — Dr. Mahmudul", date: "20 Dec 2025", selected: false },
   ]);
 
-  // নতুন রিপোর্ট যোগ করার মডাল স্টেট
   const [showAddModal, setShowAddModal] = useState(false);
+  const [showMobileSidebar, setShowMobileSidebar] = useState(false); // Mobile drawer state
   const [newReportTitle, setNewReportTitle] = useState("");
   const [newReportDate, setNewReportDate] = useState("");
 
@@ -142,7 +141,6 @@ export default function AiShifaChat() {
     );
   };
 
-  // ADVANCED CHAT LOGIC WITH PRE-BUILT ANSWERS & FALLBACK
   const handleSend = async (textToSend) => {
     const query = textToSend || input;
     if (!query.trim()) return;
@@ -161,7 +159,6 @@ export default function AiShifaChat() {
     setMessages((prev) => [...prev, userMsg]);
     if (!textToSend) setInput("");
 
-    // Simulate AI thinking and replying
     setTimeout(() => {
       let responseText = "";
       const langAnswers = prebuiltAnswers[selectedLang];
@@ -169,9 +166,8 @@ export default function AiShifaChat() {
       if (langAnswers[query]) {
         responseText = langAnswers[query];
       } else {
-        // Fallback AI simulation response tailored to context
         responseText = selectedLang === "bn" 
-          ? `আপনার প্রশ্নটি ("${query}") আমি নোট করেছি। সংযুক্ত মেডিকেল রিপোর্টগুলোর সাপেক্ষে এটি একটি সাধারণ স্বাস্থ্যগত বিষয়। সুনির্দিষ্ট চিকিৎসার জন্য অনুগ্রহ করে একজন রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।`
+          ? `আপনার প্রশ্নটি ("${query}") আমি নোট করেছি। সংযুক্ত মেডিকেল রিপোর্টগুলোর সাপেক্ষে এটি একটি সাধারণ স্বাস্থ্যগত বিষয়। সুনির্দিষ্ট চিকিৎসার জন্য অনুগ্রহ করে একজন রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।`
           : `I have noted your query ("${query}"). Based on your attached medical records, this relates to general wellness. Please consult a qualified physician for clinical treatment.`;
       }
 
@@ -201,7 +197,6 @@ export default function AiShifaChat() {
     });
   };
 
-  // 1. INITIAL LANGUAGE SELECTION SCREEN (PREMIUM DARK)
   if (!selectedLang) {
     return (
       <div className="relative flex h-screen items-center justify-center bg-[#070e18] p-4 text-slate-100 selection:bg-indigo-500 selection:text-white">
@@ -253,11 +248,11 @@ export default function AiShifaChat() {
 
   const t = localizedTexts[selectedLang];
 
-  // 2. MAIN CHAT INTERFACE (PREMIUM DARK THEME)
   return (
-    <div className="flex h-screen bg-[#070e18] text-slate-100 overflow-hidden selection:bg-indigo-500 selection:text-white">
-      {/* LEFT SIDEBAR */}
-      <aside className="hidden w-80 flex-col border-r border-white/10 bg-[#0a1322] p-6 md:flex justify-between">
+    <div className="flex h-screen bg-[#070e18] text-slate-100 overflow-hidden selection:bg-indigo-500 selection:text-white relative">
+      
+      {/* DESKTOP SIDEBAR */}
+      <aside className="hidden md:flex w-80 flex-col border-r border-white/10 bg-[#0a1322] p-6 justify-between">
         <div>
           <div className="mb-6 flex items-center justify-between">
             <Link href="/dashboard" className="text-xs font-semibold text-slate-400 hover:text-indigo-400 transition">
@@ -273,7 +268,6 @@ export default function AiShifaChat() {
             <p className="mt-1 text-xs text-slate-400 leading-relaxed">{t.subTitle}</p>
           </div>
 
-          {/* MEDICAL RECORDS CONTEXT SELECTION */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
@@ -314,50 +308,122 @@ export default function AiShifaChat() {
           </div>
         </div>
 
-        {/* DISCLAIMER */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5 text-[11px] leading-relaxed text-slate-400">
           {t.disclaimer}
         </div>
       </aside>
 
+      {/* MOBILE SIDEBAR DRAWER */}
+      {showMobileSidebar && (
+        <div className="fixed inset-0 z-50 flex bg-black/70 backdrop-blur-sm md:hidden">
+          <div className="w-85 max-w-[85%] flex flex-col bg-[#0a1322] p-6 justify-between h-full border-r border-white/10">
+            <div>
+              <div className="mb-6 flex items-center justify-between">
+                <Link href="/dashboard" className="text-xs font-semibold text-slate-400 hover:text-indigo-400 transition">
+                  {t.back}
+                </Link>
+                <button
+                  onClick={() => setShowMobileSidebar(false)}
+                  className="rounded-lg bg-white/10 px-2.5 py-1 text-xs text-white"
+                >
+                  ✕ Close
+                </button>
+              </div>
+
+              <div className="mb-6">
+                <h2 className="text-lg font-bold text-white">{t.title}</h2>
+                <p className="mt-1 text-xs text-slate-400 leading-relaxed">{t.subTitle}</p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                    {t.attachedTitle}
+                  </h3>
+                  <button
+                    onClick={() => setShowAddModal(true)}
+                    className="rounded-lg bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 text-xs font-bold text-indigo-400"
+                  >
+                    + Add New
+                  </button>
+                </div>
+
+                <div className="space-y-2.5 max-h-[50vh] overflow-y-auto pr-1">
+                  {activeReports.map((report) => (
+                    <div
+                      key={report.id}
+                      onClick={() => toggleReport(report.id)}
+                      className={`flex cursor-pointer items-center justify-between rounded-2xl border p-3.5 text-xs transition ${
+                        report.selected
+                          ? "border-indigo-500/40 bg-indigo-600/15 text-white shadow-inner"
+                          : "border-white/5 bg-[#070e18] text-slate-400"
+                      }`}
+                    >
+                      <div>
+                        <p className="font-bold text-slate-200">{report.title}</p>
+                        <p className="mt-0.5 text-[10px] text-slate-500">{report.date}</p>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={report.selected}
+                        readOnly
+                        className="h-4 w-4 rounded border-slate-700 bg-[#070e18] text-indigo-600"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-3 text-[11px] leading-relaxed text-slate-400">
+              {t.disclaimer}
+            </div>
+          </div>
+          <div className="flex-1" onClick={() => setShowMobileSidebar(false)}></div>
+        </div>
+      )}
+
       {/* CHAT MAIN CONTAINER */}
-      <main className="flex flex-1 flex-col bg-[#070e18] relative">
+      <main className="flex flex-1 flex-col bg-[#070e18] relative h-full">
         {/* HEADER */}
-        <header className="flex h-[76px] items-center justify-between border-b border-white/10 bg-[#070e18]/80 px-6 backdrop-blur-xl z-20">
-          <div className="flex items-center gap-3">
+        <header className="flex h-[76px] items-center justify-between border-b border-white/10 bg-[#070e18]/80 px-4 sm:px-6 backdrop-blur-xl z-20 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* MOBILE RECORDS TOGGLE BUTTON */}
+            <button
+              onClick={() => setShowMobileSidebar(true)}
+              className="flex md:hidden h-9 w-9 items-center justify-center rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400"
+              title="Open Reports"
+            >
+              📂
+            </button>
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-bold shadow-lg shadow-indigo-600/30">
               ✦
             </div>
             <div>
-              <h1 className="font-bold text-white text-sm sm:text-base">{t.headerTitle}</h1>
-              <p className="text-[11px] text-slate-400">{t.headerSub}</p>
+              <h1 className="font-bold text-white text-xs sm:text-base">{t.headerTitle}</h1>
+              <p className="text-[10px] sm:text-[11px] text-slate-400">{t.headerSub}</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button
               onClick={() => setSelectedLang(null)}
-              className="rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition cursor-pointer"
+              className="rounded-xl border border-white/10 bg-white/5 px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition cursor-pointer"
             >
-              🌐 {selectedLang === "bn" ? "বাংলা" : "English"} (Change)
+              🌐 {selectedLang === "bn" ? "বাংলা" : "English"}
             </button>
-
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>{t.active}</span>
-            </div>
           </div>
         </header>
 
         {/* MESSAGES AREA */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-6 lg:px-12">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 lg:px-12">
           {messages.map((msg, idx) => (
             <div
               key={idx}
               className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`max-w-[85%] rounded-3xl p-5 text-sm leading-relaxed shadow-xl border ${
+                className={`max-w-[90%] sm:max-w-[85%] rounded-3xl p-4 sm:p-5 text-sm leading-relaxed shadow-xl border ${
                   msg.sender === "user"
                     ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-white/20 rounded-br-none"
                     : "border-white/10 bg-[#0d1729] text-slate-200 rounded-bl-none"
@@ -377,7 +443,7 @@ export default function AiShifaChat() {
         </div>
 
         {/* SUGGESTIONS & INPUT AREA */}
-        <div className="border-t border-white/10 bg-[#0a1322] p-4 lg:px-12 backdrop-blur-xl">
+        <div className="border-t border-white/10 bg-[#0a1322] p-3 sm:p-4 lg:px-12 backdrop-blur-xl shrink-0">
           <div className="mb-3 flex items-center gap-2 overflow-x-auto pb-1 text-xs scrollbar-none">
             <span className="shrink-0 font-bold text-slate-400">{t.suggestionsLabel}</span>
             {samplePrompts[selectedLang].map((prompt, i) => (
@@ -398,7 +464,6 @@ export default function AiShifaChat() {
             }}
             className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#070e18] p-2 focus-within:border-indigo-500 shadow-inner transition"
           >
-            {/* FILE UPLOAD BUTTON */}
             <label className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/5 text-slate-400 hover:bg-white/10 hover:text-indigo-400 transition shrink-0" title="Upload Report / PDF">
               📎
               <input
@@ -419,7 +484,7 @@ export default function AiShifaChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={t.placeholder}
-              className="flex-1 border-none bg-transparent px-3 text-sm text-white outline-none placeholder:text-slate-500"
+              className="flex-1 border-none bg-transparent px-3 text-sm text-white outline-none placeholder:text-slate-500 min-w-0"
             />
             <button
               type="submit"
