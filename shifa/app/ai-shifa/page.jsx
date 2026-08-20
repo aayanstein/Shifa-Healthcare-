@@ -46,14 +46,12 @@ const samplePrompts = {
 
 const prebuiltAnswers = {
   bn: {
-    // Normal / Conversational Q&A
     "হেই শিফা, কেমন আছো?": "ওয়ালাইকুম আসসালাম! আলহামদুলিল্লাহ আমি ভালো আছি। আপনার স্বাস্থ্য সংক্রান্ত যেকোনো প্রয়োজনে আমি প্রস্তুত আছি বলুন, আজ কীভাবে সাহায্য করতে পারি?",
     "হাই শিফা!": "হ্যালো! আমি AI SHIFA। বলুন, আপনার শারীরিক অবস্থা বা কোনো মেডিকেল রিপোর্ট নিয়ে কি জানতে চান?",
     "আসসালামু আলাইকুম!": "ওয়ালাইকুম আসসালাম ওয়া রাহমাতুল্লাহ! আমি AI SHIFA, আপনার পার্সোনাল হেলথ কম্প্যানিয়ন। আজ আপনাকে কীভাবে সাহায্য করতে পারি বলুন?",
     "কেমন আছো?": "আলহামদুলিল্লাহ, আমি একদম ঠিক আছি! আপনার শরীর বা স্বাস্থ্য নিয়ে কি কোনো পরামর্শ প্রয়োজন?",
-    "ধন্যবাদ": "আপনাকে মোস্ট ওয়েলকাম! আপনার সুস্বাস্থ্য কামনা করি। অন্য কোনো প্রশ্ন থাকলে নির্দ্বিধায় বলতে পারেন।",
+    "ধন্যবাদ": "আপনাকে মোস্ট ওয়েলকাম! আপনার সুস্বাস্থ্য কামনা করি। অন্য কোনো প্রশ্ন থাকলে নির্দ্বিধায় বলতে পারেন.",
     
-    // Medical Q&A
     "আমার Blood Test রিপোর্টের TSH লেভেল বেশি আসার মানে কি?": "রক্ত পরীক্ষায় TSH (Thyroid Stimulating Hormone) এর মাত্রা বেশি আসার অর্থ সাধারণত হাইপোথাইরয়েডিজম (Hypothyroidism)। এতে থাইরয়েড গ্রন্থি পর্যাপ্ত হরমোন তৈরি করছে না। বিস্তারিত মূল্যায়নের জন্য একজন এন্ডোক্রিনোলজিস্টের পরামর্শ নেওয়া উচিত।",
     "আমার CBC Blood Panel এর মূল বিষয়গুলো বুঝিয়ে দাও": "CBC বা কমপ্লিট ব্লাড কাউন্টে সাধারণত হিমোগ্লোবিন, ডব্লিউবিসি (WBC) এবং প্লেটলেট পরীক্ষা করা হয়। হিমোগ্লোবিনের মাত্রা কম থাকলে রক্তস্বল্পতা (Anemia) এবং ডব্লিউবিসি বেশি থাকলে ইনফেকশন নির্দেশ করতে পারে।",
     "আমার পেটে সামান্য ব্যথা আর এসিডিটি হলে কি ঘরোয়া ব্যবস্থা নেব?": "সামান্য পেট ব্যথা ও এসিডিটিতে হালকা গরম পানি পান করতে পারেন, অতিরিক্ত তেল-মসলাযুক্ত খাবার এড়িয়ে চলুন এবং আদা চা বা পুদিনা পাতার রস খেতে পারেন। সমস্যা না কমলে চিকিৎসকের শরণাপন্ন হোন।",
@@ -71,13 +69,11 @@ const prebuiltAnswers = {
     "ঠান্ডা, সর্দি ও গলা ব্যথা থেকে দ্রুত মুক্তির উপায় কি?": "লবণ পানিতে কুলকুচি করুন, কুসুম গরম পানি ও আদা-লেবুর চা পান করুন এবং বাষ্প (Steam inhalation) নিতে পারেন."
   },
   en: {
-    // Normal / Conversational Q&A
     "Hey Shifa, how are you?": "Hello! I am doing great, thank you for asking. How can I assist you with your health or medical records today?",
     "Hi Shifa!": "Hi there! I am AI SHIFA, your health companion. Feel free to ask me anything about your health queries or reports.",
     "Hello": "Hello! How can I help you today?",
     "Thanks": "You're very welcome! Wishing you good health. Let me know if you have any other questions.",
 
-    // Medical Q&A
     "What does a high TSH level in my blood test mean?": "A high TSH (Thyroid Stimulating Hormone) level usually indicates hypothyroidism, meaning your thyroid gland is underactive and not producing enough hormones. Consult an endocrinologist for further evaluation.",
     "Explain CBC test results in plain English": "A Complete Blood Count (CBC) evaluates red blood cells, white blood cells, and platelets. Low hemoglobin can indicate anemia, while elevated white blood cells often point to an infection.",
     "What home remedies help mild stomach ache and acidity?": "For mild stomach ache and acidity, try drinking warm water, avoiding oily or spicy foods, and having ginger tea or peppermint. Consult a doctor if symptoms persist.",
@@ -107,7 +103,7 @@ const localizedTexts = {
     headerTitle: "AI SHIFA হেলথ কম্প্যানিয়ন",
     headerSub: "বাংলা ও ইংরেজি মেডিকেল ইন্টেলিজেন্স",
     active: "সক্রিয়",
-    placeholder: "AI SHIFA-কে কিছু জিজ্ঞেস করুন (যেমন: হেই শিফা)...",
+    placeholder: "AI SHIFA-কে কিছু জিজ্ঞেস করুন...",
     suggestionsLabel: "পরামর্শ ও সাধারণ প্রশ্নসমূহ:",
     welcomeMsg: "আসসালামু আলাইকুম! আমি AI SHIFA। আপনার যেকোনো শারীরিক সমস্যা বা মেডিকেল টেস্টের রিপোর্ট সহজ ভাষায় ব্যাখ্যা করতে সাহায্য করার জন্য আমি আছি। নিচের সাজেশানগুলো থেকে বেছে নিতে পারেন অথবা সরাসরি প্রশ্ন করুন।",
   },
@@ -121,7 +117,7 @@ const localizedTexts = {
     headerTitle: "AI SHIFA Health Companion",
     headerSub: "Bangla & English Medical Intelligence",
     active: "Active",
-    placeholder: "Ask AI SHIFA (e.g. Hey Shifa)...",
+    placeholder: "Ask AI SHIFA...",
     suggestionsLabel: "Suggestions & Common Queries:",
     welcomeMsg: "Hello! I am AI SHIFA, your personal health companion. I can help explain your medical reports and health queries in simple terms. Choose from the suggestions below or ask directly.",
   },
@@ -182,7 +178,6 @@ export default function AiShifaChat() {
       let responseText = "";
       const langAnswers = prebuiltAnswers[selectedLang];
 
-      // Flexible matching (case-insensitive check for greetings)
       const matchedKey = Object.keys(langAnswers).find(
         (key) => key.toLowerCase() === query.trim().toLowerCase()
       );
@@ -223,7 +218,7 @@ export default function AiShifaChat() {
 
   if (!selectedLang) {
     return (
-      <div className="relative flex h-screen items-center justify-center bg-[#070e18] p-4 text-slate-100 selection:bg-indigo-500 selection:text-white">
+      <div className="relative flex h-[100dvh] items-center justify-center bg-[#070e18] p-4 text-slate-100 selection:bg-indigo-500 selection:text-white">
         <Link
           href="/dashboard"
           className="absolute top-6 left-6 flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-300 shadow-sm hover:bg-white/10 hover:text-white transition"
@@ -273,10 +268,10 @@ export default function AiShifaChat() {
   const t = localizedTexts[selectedLang];
 
   return (
-    <div className="flex h-screen bg-[#070e18] text-slate-100 overflow-hidden selection:bg-indigo-500 selection:text-white relative">
+    <div className="flex h-[100dvh] w-screen bg-[#070e18] text-slate-100 overflow-hidden selection:bg-indigo-500 selection:text-white relative">
       
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden md:flex w-80 flex-col border-r border-white/10 bg-[#0a1322] p-6 justify-between">
+      <aside className="hidden md:flex w-80 flex-col border-r border-white/10 bg-[#0a1322] p-6 justify-between shrink-0">
         <div>
           <div className="mb-6 flex items-center justify-between">
             <Link href="/dashboard" className="text-xs font-semibold text-slate-400 hover:text-indigo-400 transition">
@@ -305,7 +300,7 @@ export default function AiShifaChat() {
               </button>
             </div>
 
-            <div className="space-y-2.5 max-h-[calc(100vh-340px)] overflow-y-auto pr-1">
+            <div className="space-y-2.5 max-h-[calc(100dvh-340px)] overflow-y-auto pr-1">
               {activeReports.map((report) => (
                 <div
                   key={report.id}
@@ -337,10 +332,10 @@ export default function AiShifaChat() {
         </div>
       </aside>
 
-      {/* MOBILE SIDEBAR DRAWER */}
+      {/* MOBILE SIDEBAR DRAWER OVERLAY */}
       {showMobileSidebar && (
         <div className="fixed inset-0 z-50 flex bg-black/70 backdrop-blur-sm md:hidden">
-          <div className="w-85 max-w-[85%] flex flex-col bg-[#0a1322] p-6 justify-between h-full border-r border-white/10">
+          <div className="w-[85%] max-w-xs flex flex-col bg-[#0a1322] p-5 justify-between h-full border-r border-white/10 shadow-2xl">
             <div>
               <div className="mb-6 flex items-center justify-between">
                 <Link href="/dashboard" className="text-xs font-semibold text-slate-400 hover:text-indigo-400 transition">
@@ -408,30 +403,30 @@ export default function AiShifaChat() {
       )}
 
       {/* CHAT MAIN CONTAINER */}
-      <main className="flex flex-1 flex-col bg-[#070e18] relative h-full">
+      <main className="flex flex-1 flex-col bg-[#070e18] relative h-[100dvh] min-w-0">
         {/* HEADER */}
-        <header className="flex h-[76px] items-center justify-between border-b border-white/10 bg-[#070e18]/80 px-4 sm:px-6 backdrop-blur-xl z-20 shrink-0">
-          <div className="flex items-center gap-2 sm:gap-3">
+        <header className="flex h-16 items-center justify-between border-b border-white/10 bg-[#070e18]/90 px-4 backdrop-blur-xl z-20 shrink-0">
+          <div className="flex items-center gap-2.5 min-w-0">
             <button
               onClick={() => setShowMobileSidebar(true)}
-              className="flex md:hidden h-9 w-9 items-center justify-center rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400"
+              className="flex md:hidden h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400"
               title="Open Reports"
             >
               📂
             </button>
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-bold shadow-lg shadow-indigo-600/30">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-bold shadow-lg shadow-indigo-600/30">
               ✦
             </div>
-            <div>
-              <h1 className="font-bold text-white text-xs sm:text-base">{t.headerTitle}</h1>
-              <p className="text-[10px] sm:text-[11px] text-slate-400">{t.headerSub}</p>
+            <div className="min-w-0">
+              <h1 className="font-bold text-white text-xs sm:text-sm truncate">{t.headerTitle}</h1>
+              <p className="text-[10px] text-slate-400 truncate">{t.headerSub}</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={() => setSelectedLang(null)}
-              className="rounded-xl border border-white/10 bg-white/5 px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition cursor-pointer"
+              className="rounded-xl border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition cursor-pointer"
             >
               🌐 {selectedLang === "bn" ? "বাংলা" : "English"}
             </button>
@@ -439,14 +434,14 @@ export default function AiShifaChat() {
         </header>
 
         {/* MESSAGES AREA */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 lg:px-12">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 lg:px-12">
           {messages.map((msg, idx) => (
             <div
               key={idx}
               className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`max-w-[90%] sm:max-w-[85%] rounded-3xl p-4 sm:p-5 text-sm leading-relaxed shadow-xl border ${
+                className={`max-w-[88%] sm:max-w-[80%] rounded-3xl p-3.5 sm:p-4 text-xs sm:text-sm leading-relaxed shadow-xl border ${
                   msg.sender === "user"
                     ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-white/20 rounded-br-none"
                     : "border-white/10 bg-[#0d1729] text-slate-200 rounded-bl-none"
@@ -454,7 +449,7 @@ export default function AiShifaChat() {
               >
                 <div>{renderFormattedText(msg.text)}</div>
                 <div
-                  className={`mt-2 text-right text-[10px] ${
+                  className={`mt-1.5 text-right text-[9px] ${
                     msg.sender === "user" ? "text-blue-200" : "text-slate-500"
                   }`}
                 >
@@ -466,14 +461,14 @@ export default function AiShifaChat() {
         </div>
 
         {/* SUGGESTIONS & INPUT AREA */}
-        <div className="border-t border-white/10 bg-[#0a1322] p-3 sm:p-4 lg:px-12 backdrop-blur-xl shrink-0">
-          <div className="mb-3 flex items-center gap-2 overflow-x-auto pb-1 text-xs scrollbar-none">
+        <div className="border-t border-white/10 bg-[#0a1322] p-3 lg:px-12 backdrop-blur-xl shrink-0">
+          <div className="mb-2.5 flex items-center gap-2 overflow-x-auto pb-1 text-xs scrollbar-none">
             <span className="shrink-0 font-bold text-slate-400">{t.suggestionsLabel}</span>
             {samplePrompts[selectedLang].map((prompt, i) => (
               <button
                 key={i}
                 onClick={() => handleSend(prompt)}
-                className="shrink-0 rounded-full border border-white/10 bg-[#070e18] px-3.5 py-1.5 text-slate-300 hover:border-indigo-500/40 hover:bg-indigo-600/20 hover:text-indigo-300 transition cursor-pointer"
+                className="shrink-0 rounded-full border border-white/10 bg-[#070e18] px-3 py-1.5 text-slate-300 hover:border-indigo-500/40 hover:bg-indigo-600/20 hover:text-indigo-300 transition cursor-pointer text-xs"
               >
                 {prompt}
               </button>
@@ -485,9 +480,9 @@ export default function AiShifaChat() {
               e.preventDefault();
               handleSend();
             }}
-            className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#070e18] p-2 focus-within:border-indigo-500 shadow-inner transition"
+            className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#070e18] p-1.5 focus-within:border-indigo-500 shadow-inner transition"
           >
-            <label className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/5 text-slate-400 hover:bg-white/10 hover:text-indigo-400 transition shrink-0" title="Upload Report / PDF">
+            <label className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl bg-white/5 text-slate-400 hover:bg-white/10 hover:text-indigo-400 transition shrink-0" title="Upload Report / PDF">
               📎
               <input
                 type="file"
@@ -507,11 +502,11 @@ export default function AiShifaChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={t.placeholder}
-              className="flex-1 border-none bg-transparent px-3 text-sm text-white outline-none placeholder:text-slate-500 min-w-0"
+              className="flex-1 border-none bg-transparent px-2 text-xs sm:text-sm text-white outline-none placeholder:text-slate-500 min-w-0"
             />
             <button
               type="submit"
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-lg shadow-indigo-600/30 hover:scale-105 transition shrink-0 cursor-pointer"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-lg shadow-indigo-600/30 hover:scale-105 transition shrink-0 cursor-pointer text-sm"
             >
               ➔
             </button>
@@ -545,7 +540,7 @@ export default function AiShifaChat() {
                   placeholder="e.g. 15 Aug 2026"
                   value={newReportDate}
                   onChange={(e) => setNewReportDate(e.target.value)}
-                  className="mt-1 w-full rounded-xl border border-white/10 bg-[#070e18] px-3.5 py-2.5 text-sm text-white outline-none focus:border-indigo-500 shadow-inner"
+                  className="mt-1 w-full rounded-xl border border-white/10 bg-[#070e18] px-3.5 py-2.5 text-sm text-sm text-white outline-none focus:border-indigo-500 shadow-inner"
                 />
               </div>
             </div>
