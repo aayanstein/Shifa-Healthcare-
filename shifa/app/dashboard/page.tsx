@@ -78,7 +78,7 @@ const upcomingAppointments = [
 export default function DashboardPage() {
   const [patientData, setPatientData] = useState<Patient>(emptyPatient);
   const [loading, setLoading] = useState(true);
-  const [isProfileOpen, setIsProfileOpen] = useState(false); // Mobile Profile Menu State
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   useEffect(() => {
     loadPatient();
@@ -184,7 +184,7 @@ export default function DashboardPage() {
               {initials}
             </button>
 
-            {/* DROPDOWN MENU FOR MOBILE / DESKTOP */}
+            {/* DROPDOWN MENU */}
             {isProfileOpen && (
               <div className="absolute right-0 mt-2 w-52 rounded-2xl border border-slate-800 bg-slate-900/95 p-2 shadow-2xl backdrop-blur-xl z-50">
                 <div className="px-3 py-2 border-b border-slate-800 mb-1">
@@ -194,30 +194,42 @@ export default function DashboardPage() {
                 <Link 
                   href="/dashboard" 
                   onClick={() => setIsProfileOpen(false)}
-                  className="block rounded-xl px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white transition"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white transition"
                 >
-                  📊 Dashboard
+                  <svg className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                  </svg>
+                  Dashboard
                 </Link>
                 <Link 
                   href="/profile" 
                   onClick={() => setIsProfileOpen(false)}
-                  className="block rounded-xl px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white transition"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white transition"
                 >
-                  👤 View Profile
+                  <svg className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  View Profile
                 </Link>
                 <Link 
                   href="/documents" 
                   onClick={() => setIsProfileOpen(false)}
-                  className="block rounded-xl px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white transition"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/80 hover:text-white transition"
                 >
-                  📁 Medical Documents
+                  <svg className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Medical Documents
                 </Link>
                 <div className="border-t border-slate-800 my-1 pt-1">
                   <button 
                     onClick={handleLogout}
-                    className="w-full text-left rounded-xl px-3 py-2 text-xs font-semibold text-rose-400 hover:bg-rose-500/10 transition"
+                    className="w-full flex items-center gap-2.5 text-left rounded-xl px-3 py-2 text-xs font-semibold text-rose-400 hover:bg-rose-500/10 transition"
                   >
-                    🚪 Logout
+                    <svg className="h-4 w-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    Logout
                   </button>
                 </div>
               </div>
@@ -415,7 +427,10 @@ export default function DashboardPage() {
                       href={`tel:${apt.phone}`} 
                       className="rounded-xl border border-slate-800 bg-slate-900/80 py-1.5 text-center text-[11px] font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition flex items-center justify-center gap-1 shadow-sm"
                     >
-                      📞 Call
+                      <svg className="h-3 w-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      Call
                     </a>
                     <a 
                       href={`https://www.google.com/maps/search/?api=1&query=${apt.mapQuery}`} 
@@ -423,11 +438,15 @@ export default function DashboardPage() {
                       rel="noopener noreferrer"
                       className="rounded-xl border border-blue-500/20 bg-blue-500/10 py-1.5 text-center text-[11px] font-semibold text-blue-400 hover:bg-blue-500/20 transition flex items-center justify-center gap-1 shadow-sm"
                     >
-                      🗺️ Map
+                      <svg className="h-3 w-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      Map
                     </a>
                     <Link 
                       href="/ai-shifa" 
-                      className="rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 py-1.5 text-center text-[11px] font-semibold text-white hover:brightness-110 transition shadow-md shadow-blue-500/20"
+                      className="rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 py-1.5 text-center text-[11px] font-semibold text-white hover:brightness-110 transition shadow-md shadow-blue-500/20 flex items-center justify-center gap-1"
                     >
                       Details
                     </Link>
