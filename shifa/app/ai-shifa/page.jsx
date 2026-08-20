@@ -218,7 +218,7 @@ export default function AiShifaChat() {
 
   if (!selectedLang) {
     return (
-      <div className="relative flex h-[100dvh] items-center justify-center bg-[#070e18] p-4 text-slate-100 selection:bg-indigo-500 selection:text-white">
+      <div className="fixed inset-0 flex items-center justify-center bg-[#070e18] p-4 text-slate-100 selection:bg-indigo-500 selection:text-white overflow-y-auto">
         <Link
           href="/dashboard"
           className="absolute top-6 left-6 flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-300 shadow-sm hover:bg-white/10 hover:text-white transition"
@@ -268,10 +268,10 @@ export default function AiShifaChat() {
   const t = localizedTexts[selectedLang];
 
   return (
-    <div className="flex h-[100dvh] w-screen bg-[#070e18] text-slate-100 overflow-hidden selection:bg-indigo-500 selection:text-white relative">
+    <div className="fixed inset-0 flex w-full bg-[#070e18] text-slate-100 overflow-hidden selection:bg-indigo-500 selection:text-white">
       
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden md:flex w-80 flex-col border-r border-white/10 bg-[#0a1322] p-6 justify-between shrink-0">
+      <aside className="hidden md:flex w-80 flex-col border-r border-white/10 bg-[#0a1322] p-6 justify-between shrink-0 h-full">
         <div>
           <div className="mb-6 flex items-center justify-between">
             <Link href="/dashboard" className="text-xs font-semibold text-slate-400 hover:text-indigo-400 transition">
@@ -300,7 +300,7 @@ export default function AiShifaChat() {
               </button>
             </div>
 
-            <div className="space-y-2.5 max-h-[calc(100dvh-340px)] overflow-y-auto pr-1">
+            <div className="space-y-2.5 overflow-y-auto pr-1 max-h-[calc(100vh-320px)]">
               {activeReports.map((report) => (
                 <div
                   key={report.id}
@@ -403,7 +403,7 @@ export default function AiShifaChat() {
       )}
 
       {/* CHAT MAIN CONTAINER */}
-      <main className="flex flex-1 flex-col bg-[#070e18] relative h-[100dvh] min-w-0">
+      <main className="flex flex-1 flex-col bg-[#070e18] relative h-full min-w-0 overflow-hidden">
         {/* HEADER */}
         <header className="flex h-16 items-center justify-between border-b border-white/10 bg-[#070e18]/90 px-4 backdrop-blur-xl z-20 shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
@@ -540,7 +540,7 @@ export default function AiShifaChat() {
                   placeholder="e.g. 15 Aug 2026"
                   value={newReportDate}
                   onChange={(e) => setNewReportDate(e.target.value)}
-                  className="mt-1 w-full rounded-xl border border-white/10 bg-[#070e18] px-3.5 py-2.5 text-sm text-sm text-white outline-none focus:border-indigo-500 shadow-inner"
+                  className="mt-1 w-full rounded-xl border border-white/10 bg-[#070e18] px-3.5 py-2.5 text-sm text-white outline-none focus:border-indigo-500 shadow-inner"
                 />
               </div>
             </div>
