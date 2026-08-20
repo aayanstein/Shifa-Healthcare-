@@ -225,6 +225,9 @@ export default function Home() {
             <Link href="#history" className="transition-colors duration-200 hover:text-blue-600">
               Timeline
             </Link>
+            <Link href="#doctors" className="transition-colors duration-200 hover:text-blue-600">
+              Doctors
+            </Link>
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
@@ -609,166 +612,188 @@ export default function Home() {
             <h2 className="text-3xl font-black leading-tight tracking-tight text-[#10233f] md:text-5xl">
               A second opinion,
               <br />
-              in plain language
+              <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Always By Your Side
+              </span>
             </h2>
 
-            <p className="mt-5 max-w-[560px] text-[17px] leading-8 text-slate-600">
-              AI SHIFA can help you understand your reports and healthcare
-              information in a simpler way — in whichever language you are
-              comfortable with.
+            <p className="mt-6 text-base leading-8 text-slate-600">
+              Confused by heavy medical jargon on lab reports or prescriptions?
+              AI SHIFA breaks down complex medical terms into clear, easy-to-understand
+              language in both Bangla and English.
             </p>
 
-            <div className="mt-9 grid gap-4">
-              <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5">
-                <h3 className="font-bold text-[#10233f]">Speaks Bangla and English</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-500">
-                  Ask naturally in either language and receive understandable explanations.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5">
-                <h3 className="font-bold text-[#10233f]">Understands your reports</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-500">
-                  Summarizes medical reports and prescriptions clearly.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5">
-                <h3 className="font-bold text-[#10233f]">Knows your history</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-500">
-                  Uses your available medical timeline to provide relevant context.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-blue-100 bg-white shadow-[0_30px_80px_rgba(25,85,209,0.12)] overflow-hidden">
-            <div className="flex items-center gap-4 border-b border-slate-100 bg-[#f4f7ff] p-5">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-md shadow-blue-600/30">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-bold text-[#10233f]">AI SHIFA</h3>
-                <p className="text-xs text-slate-500">Healthcare assistant</p>
-              </div>
-            </div>
-
-            <div className="space-y-5 p-6">
-              <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-blue-600 p-4 text-sm font-medium leading-6 text-white shadow-sm">
-                Can you explain my blood test report?
-              </div>
-              <div className="max-w-[82%] rounded-2xl rounded-tl-sm bg-[#f0f4fc] p-4 text-sm leading-6 text-[#233957]">
-                Your report can be reviewed and explained in simpler language, including what the results may mean and what you should discuss with your doctor.
-              </div>
-              <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-blue-600 p-4 text-sm font-medium leading-6 text-white shadow-sm">
-                আমার রিপোর্টটা বাংলায় বুঝিয়ে দিতে পারবে?
-              </div>
-              <div className="max-w-[82%] rounded-2xl rounded-tl-sm bg-[#f0f4fc] p-4 text-sm leading-6 text-[#233957]">
-                অবশ্যই। SHIFA আপনার রিপোর্টের তথ্য সহজ বাংলায় ব্যাখ্যা করতে সাহায্য করবে।
-              </div>
-            </div>
-
-            <div className="border-t border-slate-100 bg-slate-50/50 px-6 py-4 text-xs leading-5 text-slate-400">
-              AI-generated information is for informational purposes and does not replace professional medical advice.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MEDICAL HISTORY TIMELINE */}
-      <section id="history" className="bg-white py-24">
-        <div className="mx-auto max-w-[1050px] px-4 sm:px-6">
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
-              One ID. One history.
-            </p>
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#10233f] md:text-5xl">
-              Your care, in order
-            </h2>
-            <p className="mx-auto mt-5 max-w-[650px] text-base leading-7 text-slate-600">
-              Every visit, test and prescription can stay organized in one healthcare timeline.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="absolute left-[18px] top-0 h-full w-px bg-blue-100" />
-            <div className="space-y-8">
-              {timeline.map((item, index) => (
-                <div key={`${item.year}-${index}`} className="relative pl-12">
-                  <div className="absolute left-[10px] top-5 h-[17px] w-[17px] rounded-full border-4 border-white bg-blue-600 shadow-sm" />
-                  <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-blue-600">
-                          {item.year}
-                        </p>
-                        <h3 className="mt-2 font-bold text-[#10233f] text-lg">{item.title}</h3>
-                        <p className="mt-1 text-sm text-slate-500">{item.place}</p>
-                      </div>
-                      <span className="w-fit rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 border border-emerald-200/60">
-                        {item.status}
-                      </span>
-                    </div>
-                  </div>
+            <div className="mt-8 space-y-4">
+              <div className="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm backdrop-blur-sm">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700 font-bold">
+                  ✓
                 </div>
-              ))}
+                <div>
+                  <h4 className="text-sm font-bold text-[#10233f]">Instant Report Breakdown</h4>
+                  <p className="text-xs text-slate-500 mt-0.5">Upload lab results and get simple bullet points explaining what they mean.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm backdrop-blur-sm">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700 font-bold">
+                  ✓
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-[#10233f]">Bilingual Support (Bangla & English)</h4>
+                  <p className="text-xs text-slate-500 mt-0.5">Interact comfortably in your preferred language for complete peace of mind.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <Link
+                href="/ai-shifa"
+                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700 hover:-translate-y-0.5"
+              >
+                <span>Try AI SHIFA Now</span>
+                <span>→</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* AI Chat Preview Box */}
+          <div className="relative rounded-[32px] border border-blue-200/80 bg-white p-6 sm:p-8 shadow-2xl shadow-blue-900/10">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-sm font-bold text-[#10233f]">AI SHIFA Assistant</span>
+              </div>
+              <span className="text-[11px] font-mono text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+                Online
+              </span>
+            </div>
+
+            <div className="mt-6 space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0">
+                  You
+                </div>
+                <div className="rounded-2xl rounded-tl-none bg-slate-100 p-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  আমার CBC রিপোর্ট-এ হিমোগlobin একটু কম দেখাচ্ছে, এর মানে কী?
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-md shadow-blue-600/30">
+                  AI
+                </div>
+                <div className="rounded-2xl rounded-tl-none bg-gradient-to-br from-blue-600 to-indigo-600 p-4 text-xs sm:text-sm text-white leading-relaxed shadow-lg shadow-blue-600/20">
+                  আপনার রক্ত পরীক্ষায় হিমোগ্লোবিন কিছুটা কম থাকার অর্থ রক্তস্বল্পতা বা অ্যানিমিয়া (Anemia) হতে পারে। এটি শরীরে দুর্বলতা বা ক্লান্তি তৈরি করতে পারে। আয়রন সমৃদ্ধ খাবার খাওয়া এবং একজন ডাক্তারের পরামর্শ নেওয়া উচিত।
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-400">
+              <span>💡 AI SHIFA provides informational guidance, not a definitive medical diagnosis.</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* DOCTORS */}
-      <section className="border-t border-slate-200/60 bg-[#f5f8fd] py-24">
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-10">
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700">
-              Find Doctors
-            </p>
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#10233f] md:text-5xl">
-              Care that matches your needs
+      {/* TIMELINE SECTION */}
+      <section id="history" className="py-24 bg-[#f8fbff]">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+          <div className="mx-auto mb-16 max-w-[720px] text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-50/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-blue-700 backdrop-blur-sm">
+              Medical History
+            </div>
+
+            <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl text-[#10233f]">
+              Your Healthcare Timeline
             </h2>
-            <p className="mt-5 text-base text-slate-600">
-              Find relevant doctors and specialists through SHIFA.
+
+            <p className="mt-5 text-base leading-7 text-slate-600">
+              A chronological ledger of your medical reports, consultations, and clinic visits stored securely in SHIFA.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {doctors.map((doctor) => (
+          <div className="max-w-[800px] mx-auto space-y-4">
+            {timeline.map((item, idx) => (
               <div
-                key={doctor.name}
-                className="rounded-3xl border border-slate-200/80 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl"
+                key={idx}
+                className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-white border border-slate-200/80 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:-translate-y-0.5"
               >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-sm font-bold text-blue-700 border border-blue-100">
-                    {doctor.initials}
+                <div className="flex items-start sm:items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 font-black text-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                    {item.year}
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#10233f] text-base">{doctor.name}</h3>
-                    <p className="mt-0.5 text-sm font-medium text-blue-600">{doctor.specialty}</p>
+                    <h3 className="text-base font-bold text-[#10233f] group-hover:text-blue-600 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                      {item.place}
+                    </p>
                   </div>
                 </div>
-                <div className="mt-6 space-y-2 text-sm text-slate-500 font-medium">
-                  <p className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {doctor.experience}
+
+                <div className="shrink-0 self-start sm:self-center">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100">
+                    {item.status}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DOCTORS SECTION */}
+      <section id="doctors" className="py-24 bg-gradient-to-b from-[#f8fbff] to-[#edf4ff] border-t border-slate-200/60">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+          <div className="mx-auto mb-16 max-w-[720px] text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-50/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-blue-700 backdrop-blur-sm">
+              Specialized Care
+            </div>
+
+            <h2 className="text-3xl font-extrabold tracking-tight md:text-5xl text-[#10233f]">
+              Consult Trusted Doctors
+            </h2>
+
+            <p className="mt-5 text-base leading-7 text-slate-600">
+              Connect with experienced specialists across Bangladesh for personalized healthcare consultations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {doctors.map((doc, idx) => (
+              <div
+                key={idx}
+                className="group rounded-3xl bg-white border border-slate-200/80 p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-700 to-blue-500 text-white font-black text-lg shadow-md shadow-blue-600/20">
+                      {doc.initials}
+                    </div>
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                      {doc.availability}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[#10233f] group-hover:text-blue-600 transition-colors">
+                    {doc.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-wider text-blue-600 mt-1">
+                    {doc.specialty}
                   </p>
-                  <p className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    {doctor.location}
+                  <p className="text-xs text-slate-500 mt-1">
+                    {doc.experience} • {doc.location}
                   </p>
                 </div>
-                <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
-                  <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">{doctor.availability}</span>
+
+                <div className="mt-8 pt-4 border-t border-slate-100">
                   <Link
-                    href="/find-doctors"
-                    className="rounded-xl border border-blue-200 bg-blue-50/50 px-4 py-2 text-xs font-bold text-blue-700 transition-all duration-200 hover:bg-blue-600 hover:text-white"
+                    href="/doctors"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-slate-100 hover:bg-blue-600 hover:text-white py-3 text-xs font-bold text-slate-700 transition-all duration-300"
                   >
-                    View
+                    <span>Book Consultation</span>
+                    <span>→</span>
                   </Link>
                 </div>
               </div>
@@ -777,53 +802,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="bg-gradient-to-br from-[#0a192f] via-[#10233f] to-[#16345c] py-24 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_50%)] pointer-events-none" />
-        <div className="mx-auto max-w-[900px] px-6 text-center relative z-10">
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-            Take Control of Your Healthcare Journey
-          </h2>
-          <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-[700px] mx-auto">
-            Join SHIFA today and experience seamless healthcare management powered by AI. Keep your records safe and always accessible.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/register"
-              className="rounded-xl bg-blue-600 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-blue-600/30 transition-all duration-300 hover:bg-blue-700 hover:-translate-y-1 active:translate-y-0"
-            >
-              Get Started Now
-            </Link>
-            <Link
-              href="/ai-shifa"
-              className="rounded-xl border border-slate-700 bg-white/10 px-8 py-4 text-sm font-bold text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 active:translate-y-0"
-            >
-              Try AI SHIFA
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* FOOTER */}
-      <footer className="border-t border-slate-200/80 bg-white py-12 text-slate-500 text-sm">
-        <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white font-black">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 6.75C19.5 5.50736 18.4926 4.5 17.25 4.5H7.875C6.01104 4.5 4.5 6.01104 4.5 7.875C4.5 9.73896 6.01104 11.25 7.875 11.25H16.125C17.989 11.25 19.5 12.761 19.5 14.625C19.5 16.489 17.989 18 16.125 18H6.75C5.50736 18 4.5 16.9926 4.5 15.75C4.5 14.5074 5.50736 13.5 6.75 13.5H16.125C17.4303 13.5 18.5 12.4303 18.5 11.125C18.5 9.81972 17.4303 8.75 16.125 8.75H7.875C5.98604 8.75 4.45 7.21396 4.45 5.325C4.45 3.43604 5.98604 1.9 7.875 1.9H17.25C18.4926 1.9 19.5 2.90736 19.5 4.15V6.75Z" />
-              </svg>
+      <footer className="border-t border-slate-200/60 bg-[#0a1527] text-slate-400 py-16">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-black">
+                  S
+                </div>
+                <span className="text-xl font-black tracking-widest text-white">
+                  SHIFA
+                </span>
+              </div>
+              <p className="mt-4 text-xs text-slate-400 leading-relaxed">
+                Your intelligent healthcare companion designed to secure records, understand history, and simplify wellness across Bangladesh.
+              </p>
             </div>
-            <span className="font-extrabold text-base text-[#10233f] tracking-widest">SHIFA</span>
+
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">Quick Links</h4>
+              <ul className="space-y-2.5 text-xs">
+                <li><Link href="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
+                <li><Link href="#helpline" className="hover:text-blue-400 transition-colors">Helplines</Link></li>
+                <li><Link href="#features" className="hover:text-blue-400 transition-colors">Features</Link></li>
+                <li><Link href="#ai-shifa" className="hover:text-blue-400 transition-colors">AI SHIFA</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">Portals</h4>
+              <ul className="space-y-2.5 text-xs">
+                <li><Link href="/dashboard" className="hover:text-blue-400 transition-colors">Patient Dashboard</Link></li>
+                <li><Link href="/doctor-portal" className="hover:text-blue-400 transition-colors">Doctor Portal</Link></li>
+                <li><Link href="/login" className="hover:text-blue-400 transition-colors">Login Account</Link></li>
+                <li><Link href="/register" className="hover:text-blue-400 transition-colors">Register Profile</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">Emergency</h4>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                For immediate medical crisis or ambulance services in Bangladesh, dial <strong>999</strong> toll-free anytime.
+              </p>
+              <div className="mt-4">
+                <a
+                  href="tel:999"
+                  className="inline-flex items-center gap-2 rounded-xl bg-red-600/20 border border-red-500/30 px-4 py-2 text-xs font-bold text-red-400 hover:bg-red-600/30 transition-colors"
+                >
+                  <span>🚨 Call Emergency 999</span>
+                </a>
+              </div>
+            </div>
           </div>
 
-          <p className="text-center md:text-left text-xs text-slate-500">
-            © {new Date().getFullYear()} SHIFA Healthcare System. All rights reserved.
-          </p>
-
-          <div className="flex gap-6 text-xs font-semibold text-slate-600">
-            <Link href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-blue-600 transition-colors">Terms of Service</Link>
-            <Link href="#helpline" className="hover:text-blue-600 transition-colors">Emergency Helplines</Link>
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <p>© {new Date().getFullYear()} SHIFA Healthcare Platform. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-slate-400 transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </footer>
