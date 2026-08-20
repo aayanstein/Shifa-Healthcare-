@@ -5,6 +5,8 @@ import Link from "next/link";
 
 const samplePrompts = {
   bn: [
+    "হেই শিফা, কেমন আছো?",
+    "আসসালামু আলাইকুম!",
     "আমার Blood Test রিপোর্টের TSH লেভেল বেশি আসার মানে কি?",
     "আমার CBC Blood Panel এর মূল বিষয়গুলো বুঝিয়ে দাও",
     "আমার পেটে সামান্য ব্যথা আর এসিডিটি হলে কি ঘরোয়া ব্যবস্থা নেব?",
@@ -22,6 +24,8 @@ const samplePrompts = {
     "ঠান্ডা, সর্দি ও গলা ব্যথা থেকে দ্রুত মুক্তির উপায় কি?",
   ],
   en: [
+    "Hey Shifa, how are you?",
+    "Hi Shifa!",
     "What does a high TSH level in my blood test mean?",
     "Explain CBC test results in plain English",
     "What home remedies help mild stomach ache and acidity?",
@@ -42,6 +46,14 @@ const samplePrompts = {
 
 const prebuiltAnswers = {
   bn: {
+    // Normal / Conversational Q&A
+    "হেই শিফা, কেমন আছো?": "ওয়ালাইকুম আসসালাম! আলহামদুলিল্লাহ আমি ভালো আছি। আপনার স্বাস্থ্য সংক্রান্ত যেকোনো প্রয়োজনে আমি প্রস্তুত আছি বলুন, আজ কীভাবে সাহায্য করতে পারি?",
+    "হাই শিফা!": "হ্যালো! আমি AI SHIFA। বলুন, আপনার শারীরিক অবস্থা বা কোনো মেডিকেল রিপোর্ট নিয়ে কি জানতে চান?",
+    "আসসালামু আলাইকুম!": "ওয়ালাইকুম আসসালাম ওয়া রাহমাতুল্লাহ! আমি AI SHIFA, আপনার পার্সোনাল হেলথ কম্প্যানিয়ন। আজ আপনাকে কীভাবে সাহায্য করতে পারি বলুন?",
+    "কেমন আছো?": "আলহামদুলিল্লাহ, আমি একদম ঠিক আছি! আপনার শরীর বা স্বাস্থ্য নিয়ে কি কোনো পরামর্শ প্রয়োজন?",
+    "ধন্যবাদ": "আপনাকে মোস্ট ওয়েলকাম! আপনার সুস্বাস্থ্য কামনা করি। অন্য কোনো প্রশ্ন থাকলে নির্দ্বিধায় বলতে পারেন।",
+    
+    // Medical Q&A
     "আমার Blood Test রিপোর্টের TSH লেভেল বেশি আসার মানে কি?": "রক্ত পরীক্ষায় TSH (Thyroid Stimulating Hormone) এর মাত্রা বেশি আসার অর্থ সাধারণত হাইপোথাইরয়েডিজম (Hypothyroidism)। এতে থাইরয়েড গ্রন্থি পর্যাপ্ত হরমোন তৈরি করছে না। বিস্তারিত মূল্যায়নের জন্য একজন এন্ডোক্রিনোলজিস্টের পরামর্শ নেওয়া উচিত।",
     "আমার CBC Blood Panel এর মূল বিষয়গুলো বুঝিয়ে দাও": "CBC বা কমপ্লিট ব্লাড কাউন্টে সাধারণত হিমোগ্লোবিন, ডব্লিউবিসি (WBC) এবং প্লেটলেট পরীক্ষা করা হয়। হিমোগ্লোবিনের মাত্রা কম থাকলে রক্তস্বল্পতা (Anemia) এবং ডব্লিউবিসি বেশি থাকলে ইনফেকশন নির্দেশ করতে পারে।",
     "আমার পেটে সামান্য ব্যথা আর এসিডিটি হলে কি ঘরোয়া ব্যবস্থা নেব?": "সামান্য পেট ব্যথা ও এসিডিটিতে হালকা গরম পানি পান করতে পারেন, অতিরিক্ত তেল-মসলাযুক্ত খাবার এড়িয়ে চলুন এবং আদা চা বা পুদিনা পাতার রস খেতে পারেন। সমস্যা না কমলে চিকিৎসকের শরণাপন্ন হোন।",
@@ -59,6 +71,13 @@ const prebuiltAnswers = {
     "ঠান্ডা, সর্দি ও গলা ব্যথা থেকে দ্রুত মুক্তির উপায় কি?": "লবণ পানিতে কুলকুচি করুন, কুসুম গরম পানি ও আদা-লেবুর চা পান করুন এবং বাষ্প (Steam inhalation) নিতে পারেন."
   },
   en: {
+    // Normal / Conversational Q&A
+    "Hey Shifa, how are you?": "Hello! I am doing great, thank you for asking. How can I assist you with your health or medical records today?",
+    "Hi Shifa!": "Hi there! I am AI SHIFA, your health companion. Feel free to ask me anything about your health queries or reports.",
+    "Hello": "Hello! How can I help you today?",
+    "Thanks": "You're very welcome! Wishing you good health. Let me know if you have any other questions.",
+
+    // Medical Q&A
     "What does a high TSH level in my blood test mean?": "A high TSH (Thyroid Stimulating Hormone) level usually indicates hypothyroidism, meaning your thyroid gland is underactive and not producing enough hormones. Consult an endocrinologist for further evaluation.",
     "Explain CBC test results in plain English": "A Complete Blood Count (CBC) evaluates red blood cells, white blood cells, and platelets. Low hemoglobin can indicate anemia, while elevated white blood cells often point to an infection.",
     "What home remedies help mild stomach ache and acidity?": "For mild stomach ache and acidity, try drinking warm water, avoiding oily or spicy foods, and having ginger tea or peppermint. Consult a doctor if symptoms persist.",
@@ -88,7 +107,7 @@ const localizedTexts = {
     headerTitle: "AI SHIFA হেলথ কম্প্যানিয়ন",
     headerSub: "বাংলা ও ইংরেজি মেডিকেল ইন্টেলিজেন্স",
     active: "সক্রিয়",
-    placeholder: "AI SHIFA-কে প্রশ্ন করুন...",
+    placeholder: "AI SHIFA-কে কিছু জিজ্ঞেস করুন (যেমন: হেই শিফা)...",
     suggestionsLabel: "পরামর্শ ও সাধারণ প্রশ্নসমূহ:",
     welcomeMsg: "আসসালামু আলাইকুম! আমি AI SHIFA। আপনার যেকোনো শারীরিক সমস্যা বা মেডিকেল টেস্টের রিপোর্ট সহজ ভাষায় ব্যাখ্যা করতে সাহায্য করার জন্য আমি আছি। নিচের সাজেশানগুলো থেকে বেছে নিতে পারেন অথবা সরাসরি প্রশ্ন করুন।",
   },
@@ -102,7 +121,7 @@ const localizedTexts = {
     headerTitle: "AI SHIFA Health Companion",
     headerSub: "Bangla & English Medical Intelligence",
     active: "Active",
-    placeholder: "Ask AI SHIFA...",
+    placeholder: "Ask AI SHIFA (e.g. Hey Shifa)...",
     suggestionsLabel: "Suggestions & Common Queries:",
     welcomeMsg: "Hello! I am AI SHIFA, your personal health companion. I can help explain your medical reports and health queries in simple terms. Choose from the suggestions below or ask directly.",
   },
@@ -120,7 +139,7 @@ export default function AiShifaChat() {
   ]);
 
   const [showAddModal, setShowAddModal] = useState(false);
-  const [showMobileSidebar, setShowMobileSidebar] = useState(false); // Mobile drawer state
+  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
   const [newReportTitle, setNewReportTitle] = useState("");
   const [newReportDate, setNewReportDate] = useState("");
 
@@ -163,12 +182,17 @@ export default function AiShifaChat() {
       let responseText = "";
       const langAnswers = prebuiltAnswers[selectedLang];
 
-      if (langAnswers[query]) {
-        responseText = langAnswers[query];
+      // Flexible matching (case-insensitive check for greetings)
+      const matchedKey = Object.keys(langAnswers).find(
+        (key) => key.toLowerCase() === query.trim().toLowerCase()
+      );
+
+      if (matchedKey) {
+        responseText = langAnswers[matchedKey];
       } else {
         responseText = selectedLang === "bn" 
-          ? `আপনার প্রশ্নটি ("${query}") আমি নোট করেছি। সংযুক্ত মেডিকেল রিপোর্টগুলোর সাপেক্ষে এটি একটি সাধারণ স্বাস্থ্যগত বিষয়। সুনির্দিষ্ট চিকিৎসার জন্য অনুগ্রহ করে একজন রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।`
-          : `I have noted your query ("${query}"). Based on your attached medical records, this relates to general wellness. Please consult a qualified physician for clinical treatment.`;
+          ? `আপনার কথাটি ("${query}") বুঝতে পেরেছি। এটি একটি সাধারণ বিষয়। এ বিষয়ে বিস্তারিত জানতে বা অন্য কোনো স্বাস্থ্যগত জিজ্ঞাসা থাকলে বলতে পারেন।`
+          : `I understand your query ("${query}"). If you have any specific health concerns or report details, please let me know.`;
       }
 
       const aiReply = {
@@ -388,7 +412,6 @@ export default function AiShifaChat() {
         {/* HEADER */}
         <header className="flex h-[76px] items-center justify-between border-b border-white/10 bg-[#070e18]/80 px-4 sm:px-6 backdrop-blur-xl z-20 shrink-0">
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* MOBILE RECORDS TOGGLE BUTTON */}
             <button
               onClick={() => setShowMobileSidebar(true)}
               className="flex md:hidden h-9 w-9 items-center justify-center rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400"
